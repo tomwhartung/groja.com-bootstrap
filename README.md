@@ -4,9 +4,15 @@ Code for groja.com .
 
 ### MasterPlan
 
-Be mindful that the MasterPlan is to do something very similar using Python and Django, and Node.js and React, to compare the process and results.
+Be mindful that the MasterPlan is to do the same thing or something very similar using:
 
-For example, be on the lookout for opportunities to share non-react-dependent JavaScript, HTML, or CSS between the two!
+* HTML5, CSS, and JavaScript,
+* Python and Django, and
+* Node.js and React,
+
+then compare the process, results, and ease of scalability.
+
+So be on the lookout for opportunities to share non-react-dependent JavaScript, HTML, or CSS between the two!
 
 ## static_image_gallery - goals
 
