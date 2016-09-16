@@ -16,11 +16,7 @@ So be on the lookout for opportunities to share non-react-dependent JavaScript, 
 
 ## static_image_gallery - goals
 
-Keep in mind that the main goal is get a django site running on my server, no matter how simplistic, asap.
-
-1. Learn how to get views.py and urls.py to work together
-2. Have something minimal to host at groja.com
-3. Lay the mental groundwork for building something that uses models or PIP or both
+The main goal at this time is get a django site running on my server, no matter how simplistic, asap.
 
 ## Requirements
 
@@ -71,13 +67,4 @@ Lists of images shall be stored in JSON format.
 #### Bonus Extra Credit!
 
 Have navigation shrink into a hambuger menu icon on small screen sizes.
-
-### Design
-
-Most of the site's design is determined by django.
-
-* Single project: `static_image_gallery`
-* Single app: `groja_gallery`
-
-Views: TBD.
 
