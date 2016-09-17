@@ -1,0 +1,192 @@
+/*
+ * =============================================
+ * Styles for specific screen/window sizes, etc.
+ * =============================================
+ */
+/*
+ * styles for a laptop-sized screen/window:
+ */
+@media only screen and (min-width: 800px) {
+	body {
+		color: #ffffff;
+		background: url(../images/background-dark.jpg);
+		background-color: black;   /* in case the image goes missing somehow */
+		margin-left: 5em;
+		width: 70%;
+	}
+	h1, h2, h3, h4, h5, h6,
+	p, dl, dt, dd, ul, li,
+	tr, th, td, blockquote {
+		color: lightgrey;
+	}
+	.air-quotes {
+		color: lightgrey;
+	}
+	h1 {
+		font: bold 2em Times, serif;
+	}
+	h2 {
+		font: bold 1.8em Times, serif;
+	}
+	h3 {
+		font: bold 1.6em Times, serif;
+	}
+	h4 {
+		font: bold 1.4em Times, serif;
+	}
+	h5 {
+		font: bold 1.2em Times, serif;
+	}
+	h6 {
+		font: bold 1em Times, serif;
+	}
+	p, dl, hr, footer,
+	tr, th, td, blockquote {
+		font-size: 0.9em;
+	}
+	ul {
+		margin-left: -1.5em;
+	}
+	ul.standalone {
+		font-size: 0.9em;
+	}
+	footer {
+		font-size: 0.75em;
+		width: 85%;
+	}
+	dd {
+		margin-left: 3em;
+	}
+
+	a, a:hover {
+		color: lightskyblue;
+	}
+	a:hover {
+		border: lightskyblue dashed 2px;
+	}
+	a.local-link, a.local-link:hover,
+	.superscript {
+		color: tan;
+	}
+	a.local-link:hover {
+		border: tan dashed 2px;
+		color: tan;
+	}
+	a.mysite-link, a.mysite-link:hover {
+		color: magenta;
+	}
+	a.mysite-link:hover {
+		border: magenta dashed 2px;
+		color: magenta;
+	}
+	a.repo-link, a.repo-link:hover {
+		color: lightgreen;
+	}
+	a.repo-link:hover {
+		border: lightgreen dashed 2px;
+	}
+
+	.top, .back {
+		border: tan solid 2px;
+		font-size: 125%;
+	}
+	.top:hover, .back:hover {
+		font-size: 150%;
+	}
+	table.site_group, th, td {
+		border: goldenrod ridge 7px ;
+	}
+}
+/*
+ * styles for a phone-sized screen/window:
+ */
+@media only screen and (max-width: 800px) {
+	body {
+		color: #000000;
+		background: url(../images/background-light.jpg);
+		background-color: lightgrey;   /* in case the image goes missing somehow */
+		margin-left: 2em;
+		width: 87%;
+	}
+	h1, h2, h3, h4, h5, h6,
+	p, dl, dt, dd, ul, li,
+	tr, th, td, blockquote {
+		color: midnightblue;
+	}
+	.air-quotes {
+		color: midnightblue;
+	}
+	h1 {
+		font: bold 2.2em Times, serif;
+	}
+	h2 {
+		font: bold 2em Times, serif;
+	}
+	h3 {
+		font: bold 1.8em Times, serif;
+	}
+	h4 {
+		font: bold 1.6em Times, serif;
+	}
+	h5 {
+		font: bold 1.4em Times, serif;
+	}
+	h6 {
+		font: bold 1.2em Times, serif;
+	}
+	p, dl, hr, footer,
+	tr, th, td, blockquote {
+		font-size: 1.1em;
+	}
+	ul {
+		margin-left: -1.1em;
+	}
+	ul.standalone {
+		font-size: 1.1em;
+	}
+	footer {
+		font-size: 0.75em;
+		width: 75%;
+	}
+	dd {
+		margin-left: 1.5em;
+	}
+
+	a, a:hover {
+		color: royalblue;
+	}
+	a:hover {
+		border: royalblue dotted 2px;
+	}
+	a.local-link, a.local-link:hover,
+	.superscript {
+		color: saddlebrown;
+	}
+	a.local-link:hover {
+		border: saddlebrown dotted 2px;
+	}
+	a.mysite-link, a.mysite-link:hover {
+		color: maroon;
+	}
+	a.mysite-link:hover {
+		border: maroon dashed 2px;
+		color: maroon;
+	}
+	a.repo-link, a.repo-link:hover {
+		color: darkgreen;
+	}
+	a.repo-link:hover {
+		border: darkgreen dotted 2px;
+	}
+
+	.top, .back {
+		border: saddlebrown solid 2px;
+		font-size: 100%;
+	}
+	.top:hover, .back:hover {
+		font-size: 125%;
+	}
+	table.site_group, th, td {
+		border: brown ridge 7px ;
+	}
+}

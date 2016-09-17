@@ -1,0 +1,203 @@
+/*
+ * allDevices.css: styles for use on all devices
+ * Use this with mediaQueries.css ...
+ */
+body {
+	color: #ffffff;
+	background-color: black;
+	background: url(background-dark.jpg);
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size:    1em;
+	text-align:   left;
+}
+section {
+	clear: both;
+}
+div#content {
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, th {
+	font-weight: bold;
+	text-align:  center;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6, th, td {
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+p, ul, li, td, blockquote {
+	text-align: left;
+}
+dt {
+	font-weight: bold;
+}
+footer {
+	border: 1px solid;
+	margin: 2em 10em 2em 2em;
+	padding: 1.5em 3em 1.5em 3em;
+	text-align:  center;
+}
+/*
+ * Links
+ */
+a {
+	color: lightblue;
+	padding: 2px;
+	text-align: left;
+	text-decoration: none;
+}
+a:hover {
+	border: lightskyblue dashed 2px;
+	color: lightblue;
+	font-family: Times, serif;
+	padding: 2px;
+	text-decoration: underline;
+}
+a.disabled, a.disabled:hover {
+	cursor: default;
+	pointer-events: none;
+}
+a.image-link:hover {
+	border: none;
+}
+/*
+ * For images
+ */
+figure figcaption {
+	text-align: center;
+}
+figure.content-left,
+figure.content-right,
+figure.footnote {
+	display: inline;
+	padding: 0;
+	width: 33%;
+}
+figure.content-left,
+figure.footnote {
+	margin: 1em 1em 1em 0;
+}
+figure.content-right {
+	margin: 1em 0 1em 1em;
+}
+img.content-left,
+img.content-right,
+img.footnote {
+	width: 100%;
+}
+figure.content-left,
+figure.footnote,
+img.content-left,
+img.footnote {
+	float: left;
+}
+figure.content-right,
+img.content-right {
+	float: right;
+}
+li.notes {
+	clear: both;
+	margin-bottom: .5em;
+}
+/*
+ * Symantic css classes
+ */
+.centered {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.disabled, .obsolete {
+	text-decoration: line-through;
+}
+.emphasized {
+	font-style: italic;
+	text-decoration: underline;
+}
+.code {
+	font-family: monospace;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.back {
+	float: left;
+	padding: 0.2em;
+}
+.top {
+	float: right;
+	padding: 0.2em;
+}
+
+.air-quotes::before { content: '"'; }
+.air-quotes {
+	color: grey;
+	font-style: italic;
+}
+.air-quotes::after { content: '"'; }
+
+.superscript::before { content: "["; }
+.superscript {
+	font-variant-position: super;
+}
+.superscript::after { content: "]"; }
+ul.notes {
+	list-style-type: none;
+}
+
+div.output, .warning {
+	border-style: solid;
+	border-width: 0.5em;
+	margin: 0.5em;
+	padding: 1.0em;
+}
+.output {
+	border-color: grey;
+}
+.warning {
+	border-color: orange;
+}
+
+
+ul.no-bullets, ul.debugging, ul.square-bullets {
+	margin: 0.5em;
+	padding: 0.5em;
+}
+ul.no-bullets, ul.debugging {
+	list-style-type: none;
+}
+ul.debugging {
+	border: 3px solid red;
+}
+ul.square-bullets {
+	list-style-type: square;
+}
+
+/*
+ * WARNING: CURRENTLY UNUSED...
+ */
+/*
+ * for my list of projects
+ */
+.site_list {
+	margin: 0 auto;
+	width: 70%;
+}
+
+/*
+ * old, consider deleting soon ....
+ */
+table, th, td {
+	border: yellow inset 5px ;
+}
+table.site_group {
+	margin-bottom: 12px;
+	padding: 6px;
+}
+th, td {
+	padding: 6px;
+	text-align: center;
+	white-space: nowrap;
+}
+
