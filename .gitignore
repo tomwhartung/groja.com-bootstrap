@@ -1,3 +1,17 @@
+#
+# Documentation is here: http://git-scm.com/docs/gitignore
+#
+tmp/
+
+#
+# Ignore netbeans work area and vim temporary files
+#
+/nbproject/
+*.swp
+.~lock.*
+.*~
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -87,3 +101,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+/nbproject/private/
