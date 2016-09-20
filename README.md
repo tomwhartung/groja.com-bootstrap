@@ -25,9 +25,9 @@ The main goal at this time is get a django site running on my server, no matter 
 The Static Image Gallery shall contain the following pages, with content as described.
 
 * Home Page: static; briefly describe what the site is about and include a self-portrait
-* List of Galleries: driven by JSON data
+* List of Galleries: (possibly) driven by JSON data
 * Set of GRoJA Images: driven by JSON data
-* Single Image Page: contains the image, its title and description (and navigation) only
+* Single Image Display - Popup: contains the image, its title and description and navigation/close button only
 * About: static; more information, and links to other sites and a Contact Me page
 
 This is the bulk of the project: routes (urls) and views.
@@ -36,28 +36,37 @@ This is the bulk of the project: routes (urls) and views.
 
 KISS is how we want to play it, through and through.
 
-* Home page: `home`
-* Generics: `generics`
-* Celebrities: `celebrities`
-  * Politicians: `celebrities/politicians`
-  * TV Shows: `celebrities/tv_shows`
-  * Historical: `celebrities/historical`
+Following is a list of the pages for the site, and the route or routes of each:
+
+* Home page: `home` or `''`
+* Galleries: `galleries`
+  * Friends: `galleries/friends`
+  * Generics: `galleries/generics`
+  * TV Shows: `galleries/tvshows`
+  * Politicians: `galleries/politicians`
 * About: `about`
+* Your Groja &copy;: `yourgroja`
 
 ### Page Layouts
 
-KISS is the key here.  All pages shall contain:
+KISS is the key here.  All pages shall contain "minimal main navigation" and content **ONLY**.
 
-* navigation and
-* content
+The term "minimal main navigation" refers to links in the heading for the following pages:
 
-ONLY.
+* Home
+* Galleries
+* Your Portrait
+* About
+
+If it's easy, ensure the selected option in this menu is disabled.
 
 ### Data
 
-Lists of images shall be stored in JSON format.
+Lists of images along with their descriptions shall be stored in JSON format.
 
 ### Devices
+
+Following is a list of goals with respect to mobile phones and other devices:
 
 * Keep layouts as simple as possible.
 * Use minimal media queries.
@@ -66,5 +75,5 @@ Lists of images shall be stored in JSON format.
 
 #### Bonus Extra Credit!
 
-Have navigation shrink into a hambuger menu icon on small screen sizes.
+Have "minimal main navigation: shrink into a hambuger menu icon on small screen sizes.
 
