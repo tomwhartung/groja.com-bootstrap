@@ -40,12 +40,12 @@ Following is a list of the pages for the site, and the route or routes of each:
 
 * Home page: `home` or `''`
 * Galleries: `galleries`
-  * Friends: `galleries/friends`
-  * Generics: `galleries/generics`
-  * TV Shows: `galleries/tvshows`
-  * Politicians: `galleries/politicians`
+  * Friends: `galleries/gallery.html?gallery=friends`
+  * Generics: `galleries/gallery.html?gallery=generics`
+  * TV Shows: `galleries/gallery.html?gallery=tvshows`
+  * Politicians: `galleries/gallery.html?gallery=politicians`
 * About: `about`
-* Your Groja &copy;: `yourgroja`
+* Your portrait: `yourportrait`
 
 ### Page Layouts
 
