@@ -1,14 +1,31 @@
 
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+ * Author's custom styles
+ * ==========================================================================
+ */
 
+/*
+ * Overriding the styles in the header, to get the look and feel I want
+ */
+img.site-header {
+    float: left;
+    margin: .6em;
+}
 
+.navbar-inverse {
+    background-color: midnightblue;
+    background-image: none;
+}
 
-
-
-
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-size: 2.75em;
+}
+.navbar-tagline {
+    clear: both;
+    color: white;
+ }
 
 
 
