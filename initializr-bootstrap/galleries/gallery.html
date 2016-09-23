@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="../css/main.css">
 
   <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <script>
+    console.log( 'hi from top of gallery.html' );
+  </script>
 </head>
 
 <body>
@@ -40,23 +43,25 @@
         <a class="navbar-brand" href="#">groja.com</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-right" role="form">
-          <div class="form-group">
-            <input type="text" placeholder="Email" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="password" placeholder="Password" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-success">Sign in</button>
-        </form>
+        <ul class="navbar-form navbar-right">
+          <li><a href="#">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="galleries">Galleries</a></li>
+          <li><a href="yourportrait">Your Portrait</a></li>
+        </ul>
       </div><!--/.navbar-collapse -->
     </div><!--/.container -->
   </nav>
 
+  <h3>Galleryyyyyyyyyyyyyyyyyyyyy</h3>
+
   <div class="container">
 
     <section id="gallery">
-      <h3>gallery</h3>
+      <h3>Gallery</h3>
+      <p>
+        Gallery to show: <span id="gallery-to-show"></span>
+        </p>
       <p>
         Todo: read the GET variable and use the json for the gallery along with the handlebars template to generate the gallery.</p>
     </section><!-- #gallery -->
@@ -68,12 +73,19 @@
       <a href="www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
       All Rights Reserved.
     </footer>
-  </div><!-- .container>
+  </div><!-- .container -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
   <script src="../js/vendor/bootstrap.min.js"></script>
   <script src="../js/main.js"></script>
+  <script src="gallery.js"></script>
+  <script>
+    console.log( 'hi from bottom of gallery.html' );
+    var galleryToShow = getQueryVariable( 'gallery' );
+    console.log( 'galleryToShow = ' + galleryToShow );
+    $('#gallery-to-show').text( galleryToShow );
+  </script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
