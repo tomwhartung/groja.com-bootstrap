@@ -31,8 +31,18 @@ img.site-header {
      margin-top: 50px;
  }
 
-
-
+ul.navbar-form,
+ul.navbar-right {
+    list-style-type: none;
+}
+a.menu-item {
+    color: white;
+    font-size: 1.5em;
+}
+li.menu-item {
+    display: inline;
+    padding: 1em;
+}
 
 
 
