@@ -72,11 +72,19 @@ li.menu-item {
  * }
  */
 
-a.selected {
+/*
+ * Some miscellaneous styles to override the defaults in our effort to
+ * make everything just exactly perfect.
+ */
+a.selected {            /* main nav menu - current "selected" page */
 	color: lightgrey;
 }
 a.selected:hover {
 	text-decoration: line-through;
+}
+
+a.gallery-title {
+    color: black;
 }
 
 /*
