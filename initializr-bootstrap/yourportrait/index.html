@@ -26,57 +26,63 @@
 
 <body>
   <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <img class="site-header" src="../../images/site/estp-generic-scaled-81x81.gif">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">groja.com</a>
-      </div>
+        <a href="#">
+          <span class="navbar-brand">groja.com</span>
+          <span class="navbar-tagline">'Visualizing Personalities Since 1989' &trade;</span></a>
+      </div><!-- .navbar-header -->
       <div id="navbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-right" role="form">
-          <div class="form-group">
-            <input type="text" placeholder="Email" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="password" placeholder="Password" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-success">Sign in</button>
-        </form>
+        <ul class="navbar-form navbar-right">
+          <li class="menu-item"><a class="menu-item" href="#">Home</a></li>
+          <li class="menu-item"><a class="menu-item" href="about">About</a></li>
+          <li class="menu-item"><a class="menu-item" href="galleries">Galleries</a></li>
+          <li class="menu-item"><a class="menu-item" href="booksandsites">Books and Sites</a></li>
+          <li class="menu-item"><a class="menu-item" href="yourportrait">Your Portrait</a></li>
+        </ul>
       </div><!--/.navbar-collapse -->
     </div><!--/.container -->
   </nav>
 
-  <div class="container">
+  <main>
+    <div class="container">
+      <section id="yourportrait">
+        <h3>Your Portrait</h3>
+        <p>
+          Due to a large variety of reasons, I have decided to create all Spiritual Portraits by hand.
+          Although a large part of this process is automated, producing a high-quality, unique and personalized portrait, and
+            ensuring that you understand its significance and meaning requires a personal touch.</p>
+        <p>
+          Therefore, to get your Spiritual Portrait, aka. your Groja, please
+          <a href="http://www.tomwhartung.com/contact-me/" target="_blank"
+             title="Contact me page at tomwhartung.com, that offers a variety of methods of contacting me.">
+            contact me</a>
+          at your earliest convenience.</p>
+      </section><!-- #yourportrait -->
 
-    <section id="yourportrait">
-      <h3>Your Portrait</h3>
-      <p>
-        Due to a large variety of reasons, I have decided to create all Spiritual Portraits by hand.
-        Although a large part of this process is automated, producing a high-quality, unique and personalized portrait, and
-          ensuring that you understand its significance and meaning requires a personal touch.</p>
-      <p>
-        Therefore, to get your Spiritual Portrait, aka. your Groja, please
-        <a href="http://www.tomwhartung.com/contact-me/" target="_blank"
-           title="Contact me page at tomwhartung.com, that offers a variety of methods of contacting me.">
-          contact me</a>
-        at your earliest convenience.</p>
-    </section><!-- #yourportrait -->
-  
-    <footer>
-      Copyright &copy; 2016
-      <a href="www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
-      and
-      <a href="www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
-      All Rights Reserved.
-    </footer>
-  </div><!-- .container>
+      <footer>
+        Copyright &copy; 2016
+        <a href="www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
+        and
+        <a href="www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
+        All Rights Reserved.
+      </footer>
+    </div><!-- .container>
+  </main>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
