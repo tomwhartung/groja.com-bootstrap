@@ -29,51 +29,58 @@
 
 <body>
   <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <img class="site-header" src="../../images/site/estp-generic-scaled-81x81.gif">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">groja.com</a>
-      </div>
+        <a href="#">
+          <span class="navbar-brand">groja.com</span>
+          <span class="navbar-tagline">'Visualizing Personalities Since 1989' &trade;</span></a>
+      </div><!-- .navbar-header -->
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="navbar-form navbar-right">
-          <li><a href="#">Home</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="galleries">Galleries</a></li>
-          <li><a href="yourportrait">Your Portrait</a></li>
+          <li class="menu-item"><a class="menu-item" href="..">Home</a></li>
+          <li class="menu-item"><a class="menu-item" href="../about">About</a></li>
+          <li class="menu-item"><a class="menu-item" href=".">Galleries</a></li>
+          <li class="menu-item"><a class="menu-item" href="../booksandsites">Books and Sites</a></li>
+          <li class="menu-item"><a class="menu-item" href="../yourportrait">Your Portrait</a></li>
         </ul>
       </div><!--/.navbar-collapse -->
     </div><!--/.container -->
   </nav>
 
-  <h3>Galleryyyyyyyyyyyyyyyyyyyyy</h3>
-
-  <div class="container">
-
-    <section id="gallery">
-      <h3>Gallery</h3>
-      <p>
-        Gallery to show: <span id="gallery-to-show"></span>
-        </p>
-      <p>
-        Todo: read the GET variable and use the json for the gallery along with the handlebars template to generate the gallery.</p>
-    </section><!-- #gallery -->
+  <main>
+    <div class="container">
+      <section id="gallery">
+        <h3>Gallery</h3>
+        <p>
+          Gallery to show: <span id="gallery-to-show"></span>
+          </p>
+        <p>
+          </p>
+      </section><!-- #gallery -->
   
-    <footer>
-      Copyright &copy; 2016
-      <a href="www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
-      and
-      <a href="www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
-      All Rights Reserved.
-    </footer>
-  </div><!-- .container -->
+      <footer>
+        Copyright &copy; 2016
+        <a href="http://www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
+        and
+        <a href="http://www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
+        All Rights Reserved.
+      </footer>
+    </div><!-- .container -->
+  </main>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
