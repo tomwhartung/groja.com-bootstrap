@@ -27,9 +27,12 @@ img.site-header {
     float: left;
 }
 
- .jumbotron {
-     margin-top: 50px;
- }
+/*
+ * We need the content to appear beneath (and not behind) the page header.
+ */
+main {
+    margin-top: 50px;
+}
 /*
  * This is not how I would normally do things, but
  * experimentation has led to the conclusion that
