@@ -68,3 +68,28 @@ li.menu-item {
  *     word-wrap: break-word;
  * }
  */
+
+/*
+ * Some more serious styles, copied from my tomwhartung.github.io css file:
+ */
+figure figcaption {
+	text-align: center;
+}
+
+/*
+ * Some "fun" (semantic) styles, copied from my tomwhartung.github.io css file:
+ */
+.air-quotes::before { content: '"'; }
+.air-quotes {
+	font-style: italic;
+}
+.air-quotes::after { content: '"'; }
+
+.disabled, .obsolete {
+	text-decoration: line-through;
+}
+.emphasized {
+	font-style: italic;
+	text-decoration: underline;
+}
+
