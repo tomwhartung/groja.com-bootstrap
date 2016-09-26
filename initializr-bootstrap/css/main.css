@@ -74,13 +74,23 @@ li.menu-item {
 
 /*
  * Some miscellaneous styles to override the defaults in our effort to
- * make everything just exactly perfect.
+ * *****************************************
+ * * make everything just exactly perfect. *
+ * *****************************************
  */
+footer {
+   border: 6px double midnightblue;
+   border-radius: 1em;
+   margin: 3em 0;    /* (top, bottom) (left, right) */
+   padding: 1em;
+   text-align: center;
+}
+
 a.selected {            /* main nav menu - current "selected" page */
-	color: lightgrey;
+   color: lightgrey;
 }
 a.selected:hover {
-	text-decoration: line-through;
+   text-decoration: line-through;
 }
 
 a.gallery-title {
@@ -92,22 +102,22 @@ a.gallery-title {
  */
 .air-quotes::before { content: '"'; }
 .air-quotes {
-	font-style: italic;
+   font-style: italic;
 }
 .air-quotes::after { content: '"'; }
 
 .disabled, .obsolete {
-	text-decoration: line-through;
+   text-decoration: line-through;
 }
 .emphasized {
-	font-style: italic;
-	text-decoration: underline;
+   font-style: italic;
+   text-decoration: underline;
 }
 
 /*
  * Some more serious styles, copied from my tomwhartung.github.io css file:
  */
 figure figcaption {
-	text-align: center;
+   text-align: center;
 }
 
