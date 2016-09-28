@@ -78,6 +78,29 @@ li.menu-item {
  * * make everything just exactly perfect. *
  * *****************************************
  */
+.sidebox {
+   border: 2px solid midnightblue;
+   border-radius: 1em;
+   margin: 1em;
+   padding: 2em;
+   text-align: left;
+}
+
+figcaption {
+   clear: both;
+	font-weight: bold;
+}
+
+figure,
+figcaption {
+   display: block;
+   text-align: center;
+}
+
+sidebox-img {
+   display: block;
+}
+
 footer {
    border: 6px double midnightblue;
    border-radius: 1em;
@@ -112,12 +135,5 @@ a.gallery-title {
 .emphasized {
    font-style: italic;
    text-decoration: underline;
-}
-
-/*
- * Some more serious styles, copied from my tomwhartung.github.io css file:
- */
-figure figcaption {
-   text-align: center;
 }
 
