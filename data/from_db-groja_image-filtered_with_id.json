@@ -3,11 +3,11 @@
  @version 0.1
  */
 
-// Database 'jumlah_seeourminds'
 //
 // SQL:
-// SELECT `id`, `image_name`, `composition`, `e_score`, `n_score`, `f_score`, `j_score`,
-//    `four_letter_type`, `archetype`, `quiz_type`, `frontpage_blurb`
+// SELECT `id`, `image_name`, `composition`,
+//        `e_score`, `n_score`, `f_score`, `j_score`,
+//        `four_letter_type`, `archetype`, `quiz_type`, `frontpage_blurb`
 //    FROM `j16_groja_image` WHERE `frontpage_blurb` IS NOT NULL
 //
 
