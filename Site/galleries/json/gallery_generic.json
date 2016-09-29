@@ -1,0 +1,202 @@
+/**
+ * Image data for gallery of generic portraits
+ * -------------------------------------------
+ * This data came from a MySql database, if that matters.
+ */
+
+gallery = {};
+gallery.genericImages = [
+{
+    "id": "133",
+    "image_name": "enfj",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "11",
+    "f_score": "11",
+    "j_score": "11",
+    "four_letter_type": "ENFJ",
+    "archetype": "Fe",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ENFJ, created for the Gallery. ROU?"
+}, {
+    "id": "134",
+    "image_name": "enfp",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "11",
+    "f_score": "11",
+    "j_score": "8",
+    "four_letter_type": "ENFP",
+    "archetype": "Ne",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ENFP for the Gallery."
+}, {
+    "id": "135",
+    "image_name": "entj",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "11",
+    "f_score": "8",
+    "j_score": "11",
+    "four_letter_type": "ENTJ",
+    "archetype": "Te",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ENTJ for the Gallery."
+}, {
+    "id": "136",
+    "image_name": "entp",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "11",
+    "f_score": "8",
+    "j_score": "8",
+    "four_letter_type": "ENTP",
+    "archetype": "Ne",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ENTP for the Gallery."
+}, {
+    "id": "137",
+    "image_name": "esfj",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "8",
+    "f_score": "11",
+    "j_score": "11",
+    "four_letter_type": "ESFJ",
+    "archetype": "Fe",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ESFJ, created for the Gallery."
+}, {
+    "id": "138",
+    "image_name": "esfp",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "8",
+    "f_score": "11",
+    "j_score": "8",
+    "four_letter_type": "ESFP",
+    "archetype": "Se",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ESFP, created for the Gallery."
+}, {
+    "id": "139",
+    "image_name": "estj",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "8",
+    "f_score": "8",
+    "j_score": "11",
+    "four_letter_type": "ESTJ",
+    "archetype": "Te",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ESTJ, created for the Gallery."
+}, {
+    "id": "140",
+    "image_name": "estp",
+    "composition": "O",
+    "e_score": "11",
+    "n_score": "8",
+    "f_score": "8",
+    "j_score": "8",
+    "four_letter_type": "ESTP",
+    "archetype": "Se",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ESTP, created for the Gallery."
+}, {
+    "id": "141",
+    "image_name": "infj",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "11",
+    "f_score": "11",
+    "j_score": "11",
+    "four_letter_type": "INFJ",
+    "archetype": "Ni",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic INFJ, for the Gallery."
+}, {
+    "id": "142",
+    "image_name": "infp",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "11",
+    "f_score": "11",
+    "j_score": "8",
+    "four_letter_type": "INFP",
+    "archetype": "Fi",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic INFP, for the Gallery."
+}, {
+    "id": "143",
+    "image_name": "intj",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "11",
+    "f_score": "8",
+    "j_score": "11",
+    "four_letter_type": "INTJ",
+    "archetype": "Ni",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic INTJ, for the Gallery."
+}, {
+    "id": "144",
+    "image_name": "intp",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "11",
+    "f_score": "8",
+    "j_score": "8",
+    "four_letter_type": "INTP",
+    "archetype": "Ti",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic INTP, for the Gallery."
+}, {
+    "id": "145",
+    "image_name": "isfj",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "8",
+    "f_score": "11",
+    "j_score": "11",
+    "four_letter_type": "ISFJ",
+    "archetype": "Si",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ISFJ, for the Gallery."
+}, {
+    "id": "146",
+    "image_name": "isfp",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "8",
+    "f_score": "11",
+    "j_score": "8",
+    "four_letter_type": "ISFP",
+    "archetype": "Fi",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ISFP, for the Gallery."
+}, {
+    "id": "147",
+    "image_name": "istj",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "8",
+    "f_score": "8",
+    "j_score": "11",
+    "four_letter_type": "ISTJ",
+    "archetype": "Si",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ISTJ, for the Gallery."
+}, {
+    "id": "148",
+    "image_name": "istp",
+    "composition": "O",
+    "e_score": "8",
+    "n_score": "8",
+    "f_score": "8",
+    "j_score": "8",
+    "four_letter_type": "ISTP",
+    "archetype": "Ti",
+    "quiz_type": "J",
+    "frontpage_blurb": "Image of a Generic ISTP, for the Gallery."
+}
+];
