@@ -1,5 +1,54 @@
 /**
- * At least at first, all we want is a simple way to get the
+ * ****************************************
+ *  Data and functions used by the gallery
+ * ****************************************
+ *
+ * We could keep this in the global js directory, but
+ *   I think it's fine keeping it here, at least for now.
+ *
+ * That is, I do not forsee other pages using any of this, but
+ *   if it turns out to be useful to one or more of them,
+ *     by all means move it to the global js dir.
+ *
+ */
+
+gallery = {};
+
+/**
+ ************************************
+ * Gallery data
+ ************************************
+ */
+gallery.name = {
+   'sixteen_types':
+      "Sixteen Types",
+   'friends':
+      "Friends and Family",
+   'tv_shows':
+      "TV Shows",
+   'politicians':
+      "Politicians"
+}
+
+gallery.description = {
+   'sixteen_types':
+      "This gallery contains images of ... Sixteen Types ... and so on.",
+   'friends':
+      "This gallery contains images of ... Friends and Family ... and so on.",
+   'tv_shows':
+      "This gallery contains images of ... TV Shows ... and so on.",
+   'politicians':
+      "This gallery contains images of ... Politicians ... and so on."
+}
+
+/**
+ ************************************
+ * Gallery functions
+ ************************************
+ */
+
+/**
+ * All we want is a simple way to get the
  * value of the "gallery" query variable so we know which gallery to display.
  *
  * This method, which is just one of many found (there are several on stack overflow),
@@ -15,9 +64,6 @@
  * Reference:
  *    https://css-tricks.com/snippets/javascript/get-url-variables/
  */
-
-gallery = {};
-
 gallery.getQueryVariable = function (variable) {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
@@ -28,12 +74,35 @@ gallery.getQueryVariable = function (variable) {
        return(false);
 }
 
-gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
+/**
+ * Once we have the gallery to show, we can set its name and the description.
+ */
+gallery.setNameAndDescription = function( galleryToShow ) {
+   alert( 'galleryToShow: ' + this.galleryToShow );
+   $('#name-of-gallery').text( this.name[galleryToShow] );
+   $('#description-of-gallery').text( this.description[galleryToShow] );
+}
 
-$('#gallery-to-show').text( gallery.galleryToShow );
+/**
+ * Get the json file for the gallery to show, and plug in each image and its corresponding data.
+ */
+gallery.getJsonFile = function( galleryToShow ) {
+   $('#gallery-to-show').text( this.galleryToShow );
+   $('#json-file-name').text( this.jsonFileName );
+}
+
+gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
+gallery.jsonFileName = 'json/' + gallery.galleryToShow + '.json';
 
 console.log( 'gallery.galleryToShow = ' + gallery.galleryToShow );
+console.log( 'gallery.jsonFileName = ' + gallery.jsonFileName );
 
-// console.log( 'gallery.genericImages.length = ' + gallery.genericImages.length );
+$.getJSON( "json/sixteen_types.json", function(data) {
+   console.log( 'data.length = ' + data.length );
+   jsonData = data;
+});
+
+gallery.setNameAndDescription( gallery.galleryToShow );
+gallery.getJsonFile( gallery.galleryToShow );
 
 
