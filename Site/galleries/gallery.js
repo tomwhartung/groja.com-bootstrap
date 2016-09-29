@@ -77,32 +77,41 @@ gallery.getQueryVariable = function (variable) {
 /**
  * Once we have the gallery to show, we can set its name and the description.
  */
-gallery.setNameAndDescription = function( galleryToShow ) {
-   alert( 'galleryToShow: ' + this.galleryToShow );
-   $('#name-of-gallery').text( this.name[galleryToShow] );
-   $('#description-of-gallery').text( this.description[galleryToShow] );
+gallery.populateNameAndDescription = function() {
+   $('#name-of-gallery').text( this.name[this.galleryToShow] );
+   $('#description-of-gallery').text( this.description[this.galleryToShow] );
+   //
+   // For debugging
+   //
+   $('#gallery-to-show').text( this.galleryToShow );
+   $('#json-file-name').text( this.jsonFileName );
 }
 
 /**
- * Get the json file for the gallery to show, and plug in each image and its corresponding data.
+ * Get the json file for the gallery to show,
+ * setting a callback to populate the gallery with
+ * each image and its corresponding data.
  */
-gallery.getJsonFile = function( galleryToShow ) {
-   $('#gallery-to-show').text( this.galleryToShow );
-   $('#json-file-name').text( this.jsonFileName );
+gallery.getJsonAndPopulateGallery = function() {
+   $.getJSON( this.jsonFileName, gallery.populateGallery );
+}
+
+/**
+ * Callback from getJSON call that processes the JSON we get
+ */
+gallery.populateGallery = function( images ) {
+
+   console.log( 'images.length = ' + images.length );
+   $('#number-of-images').text( images.length );
+   $('#image-zero-id').text( images[0].id );
+   $('#image-zero-image-name').text( images[0].image_name );
+   $('#image-zero-four-letter-type').text( images[0].four_letter_type );
 }
 
 gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
 gallery.jsonFileName = 'json/' + gallery.galleryToShow + '.json';
 
-console.log( 'gallery.galleryToShow = ' + gallery.galleryToShow );
-console.log( 'gallery.jsonFileName = ' + gallery.jsonFileName );
-
-$.getJSON( "json/sixteen_types.json", function(data) {
-   console.log( 'data.length = ' + data.length );
-   jsonData = data;
-});
-
-gallery.setNameAndDescription( gallery.galleryToShow );
-gallery.getJsonFile( gallery.galleryToShow );
+gallery.populateNameAndDescription();
+gallery.getJsonAndPopulateGallery();
 
 
