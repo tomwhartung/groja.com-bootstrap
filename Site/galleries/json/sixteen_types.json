@@ -1,12 +1,4 @@
-/**
- * Image data for gallery of generic portraits
- * -------------------------------------------
- * This data came from a MySql database, if that matters.
- */
-
-gallery = {};
-gallery.genericImages = [
-{
+[{
     "id": "133",
     "image_name": "enfj",
     "composition": "O",
@@ -198,5 +190,4 @@ gallery.genericImages = [
     "archetype": "Ti",
     "quiz_type": "J",
     "frontpage_blurb": "Image of a Generic ISTP, for the Gallery."
-}
-];
+}]
