@@ -64,15 +64,24 @@
 
   <main>
     <div class="container">
-      <section id="gallery">
+      <section id="gallery-description">
+        <h3>
+          <span id="name-of-gallery"></span> Gallery</h3>
+        <p id="description-of-gallery"></p>
+      </section><!-- #gallery-description -->
+
+      <section id="gallery-images">
         <h3>Gallery</h3>
         <p>
-          Gallery to show: <span id="gallery-to-show"></span>
-          </p>
+          Gallery to show: <span id="gallery-to-show"></span></p>
+        <p>
+          Json file name: <span id="json-file-name"></span></p>
+        <p>
+          Number of images: <span id="number-of-images"></span></p>
         <p>
           </p>
-      </section><!-- #gallery -->
-  
+      </section><!-- #gallery-images -->
+
       <footer>
         Copyright &copy; 2016
         <a href="http://www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
@@ -89,7 +98,6 @@
   <script src="../js/main.js"></script>
 
   <script src="gallery.js"></script>
-  <script src="json/gallery_generic.json"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
