@@ -16,7 +16,9 @@
  *    https://css-tricks.com/snippets/javascript/get-url-variables/
  */
 
-function getQueryVariable(variable) {
+gallery = {};
+
+gallery.getQueryVariable = function (variable) {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
@@ -26,12 +28,12 @@ function getQueryVariable(variable) {
        return(false);
 }
 
-console.log( 'hi from gallery.js' );
+gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
 
-// var galleryToShow = getQueryVariable( 'gallery' );
-// 
-// console.log( 'galleryToShow = ' + galleryToShow );
-// 
-// +function($) {
-//    $('#gallery-to-show').text( galleryToShow );
-// }(jQuery);
+$('#gallery-to-show').text( gallery.galleryToShow );
+
+console.log( 'gallery.galleryToShow = ' + gallery.galleryToShow );
+
+// console.log( 'gallery.genericImages.length = ' + gallery.genericImages.length );
+
+
