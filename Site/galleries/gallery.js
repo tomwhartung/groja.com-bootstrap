@@ -80,24 +80,23 @@ gallery.getQueryVariable = function (variable) {
 gallery.populateNameAndDescription = function() {
    $('#name-of-gallery').text( this.name[this.galleryToShow] );
    $('#description-of-gallery').text( this.description[this.galleryToShow] );
-   //
-   // For debugging
-   //
-   console.log( 'populateNameAndDescription - this.pathToImages: ' + this.pathToImages )
-   $('#gallery-to-show').text( this.galleryToShow );
-   $('#json-file-name').text( this.jsonFileName );
-   $('#path-to-images').text( this.pathToImages );
 }
 
 /**
  * Callback from getJSON call that processes the JSON we get
  */
 gallery.populateGallery = function( images ) {
+   //
+   // For debugging - remove when page works ok for all galleries
+   //
+   $('#gallery-to-show').text( gallery.galleryToShow );
+   $('#json-file-name').text( gallery.jsonFileName );
    $('#number-of-images').text( images.length );
+   $('#path-to-images').text( gallery.pathToImages );
 
    var full_path_to_image;
    //
-   // our first image is a static image
+   // our first image is a static image - also remove when everything is working
    //
    full_path_to_image = gallery.pathToImages + images[1].image_file_name;  // "this." does not work in callbacks
    $('#static-image-img').attr( "src", full_path_to_image );
