@@ -2,6 +2,7 @@
   {
     "id": "113",
     "image_name": "George H. W. Bush",
+    "image_file_name": "istj-george_h_w_bush-41st_president.jpeg",
     "composition": "O",
     "e_score": "9",
     "n_score": "3",
@@ -14,6 +15,7 @@
   }, {
     "id": "124",
     "image_name": "Bill Clinton, 'Verified'",
+    "image_file_name": "enfp-bill_clinton.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "11",
@@ -26,6 +28,7 @@
   }, {
     "id": "125",
     "image_name": "Hillary Clinton",
+    "image_file_name": "estj-hillary_clinton.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "8",
@@ -38,6 +41,7 @@
   }, {
     "id": "126",
     "image_name": "George W. Bush",
+    "image_file_name": "estp-george_w_bush.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "8",
@@ -50,6 +54,7 @@
   }, {
     "id": "127",
     "image_name": "John McCain",
+    "image_file_name": "estp-john_mccain.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "8",
@@ -62,6 +67,7 @@
   }, {
     "id": "128",
     "image_name": "Barack Obama",
+    "image_file_name": "enfp-barack_obama.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "11",
@@ -74,6 +80,7 @@
   }, {
     "id": "129",
     "image_name": "Ralph Nader",
+    "image_file_name": "enfj-ralph_nader.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "11",
@@ -86,6 +93,7 @@
   }, {
     "id": "130",
     "image_name": "Abraham Lincoln - INTP",
+    "image_file_name": "intp-abraham_lincoln.jpeg",
     "composition": "O",
     "e_score": "8",
     "n_score": "11",
@@ -98,6 +106,7 @@
   }, {
     "id": "131",
     "image_name": "George Washington: ESTJ",
+    "image_file_name": "estj-george_washington.jpeg",
     "composition": "O",
     "e_score": "11",
     "n_score": "8",
@@ -110,6 +119,7 @@
   }, {
     "id": "151",
     "image_name": "Thomas Jefferson - INTP",
+    "image_file_name": "intj-thomas_jefferson.jpeg",
     "composition": "O",
     "e_score": "8",
     "n_score": "11",
