@@ -93,19 +93,9 @@ gallery.populateNameAndDescription = function() {
  * Callback from getJSON call that processes the JSON we get
  */
 gallery.populateGallery = function( images ) {
-   //
-   // call this "proof of concept"
-   //
-   console.log( 'populateGallery - gallery.pathToImages: ' + gallery.pathToImages )
-   var full_path_to_image;
-   full_path_to_image = gallery.pathToImages + images[0].image_file_name;  // "this." does not work in callbacks
-   console.log( 'images.length = ' + images.length );
    $('#number-of-images').text( images.length );
-   $('#image-zero-id').text( images[0].id );
-   $('#image-zero-image-name').text( images[0].image_name );
-   $('#image-zero-four-letter-type').text( images[0].four_letter_type );
-   $('#image-zero-image-file-name').text( images[0].image_file_name );
-   $('#image-zero-full-path-to-image').text( full_path_to_image );
+
+   var full_path_to_image;
    //
    // our first image is a static image
    //
