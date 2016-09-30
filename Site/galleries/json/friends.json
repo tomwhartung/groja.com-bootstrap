@@ -2,6 +2,7 @@
   {
     "id": "111",
     "image_name": "A Boss Who Didn't Like Me",
+    "image_file_name": "infj-manager_b-a_boss_who_did_not_like_me.jpeg",
     "composition": "O",
     "e_score": "2",
     "n_score": "12",
@@ -14,6 +15,7 @@
   }, {
     "id": "110",
     "image_name": "Tom 87",
+    "image_file_name": "infp-tomh_1987.jpeg",
     "composition": "O",
     "e_score": "9",
     "n_score": "13",
@@ -26,6 +28,7 @@
   }, {
     "id": "86",
     "image_name": "mildred (my kitty cat) 1",
+    "image_file_name": "isfp-mildred_my_warm_soft_kitty_cat_friends.jpeg",
     "composition": "O",
     "e_score": "2",
     "n_score": "8",
@@ -38,6 +41,7 @@
   }, {
     "id": "112",
     "image_name": "A Boss Who Liked Me",
+    "image_file_name": "enfp-manager_a-a_boss_who_liked_me.jpeg",
     "composition": "O",
     "e_score": "13",
     "n_score": "15",
@@ -50,6 +54,7 @@
   }, {
     "id": "114",
     "image_name": "Roy B. Scherer",
+    "image_file_name": "estp-roy_b_scherer-libertarian_lobbyist.jpeg",
     "composition": "O",
     "e_score": "15",
     "n_score": "8",
@@ -62,6 +67,7 @@
   }, {
     "id": "118",
     "image_name": "Jim Armstrong",
+    "image_file_name": "esfj-jim_armstrong-a_best_friend_forever.jpeg",
     "composition": "O",
     "e_score": "19",
     "n_score": "8",
@@ -74,6 +80,7 @@
   }, {
     "id": "120",
     "image_name": "Dr. Loren Carrier",
+    "image_file_name": "intp-dr_loren_carrier-electronic_music_teacher.jpeg",
     "composition": "O",
     "e_score": "4",
     "n_score": "18",
@@ -86,6 +93,7 @@
   }, {
     "id": "121",
     "image_name": "Walter Wright",
+    "image_file_name": "intp-walter_wright-computer_graphics_design_teacher.jpeg",
     "composition": "O",
     "e_score": "9",
     "n_score": "17",
@@ -98,6 +106,7 @@
   }, {
     "id": "123",
     "image_name": "Tom H - Latest Humanmetrics",
+    "image_file_name": "infj-tom_2008-humanmetrics.jpeg",
     "composition": "O",
     "e_score": "3",
     "n_score": "17",
