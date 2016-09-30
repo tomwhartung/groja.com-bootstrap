@@ -85,23 +85,32 @@ gallery.populateNameAndDescription = function() {
 /**
  * Callback from getJSON call that processes the JSON we get
  */
-gallery.populateGallery = function( images ) {
+gallery.populateGallery = function( image_json ) {
    //
    // For debugging - remove when page works ok for all galleries
    //
    $('#gallery-to-show').text( gallery.galleryToShow );
    $('#json-file-name').text( gallery.jsonFileName );
-   $('#number-of-images').text( images.length );
+   $('#number-of-images').text( image_json.image_list.length );
    $('#path-to-images').text( gallery.pathToImages );
 
    var full_path_to_image;
    //
    // our first image is a static image - also remove when everything is working
    //
-   full_path_to_image = gallery.pathToImages + images[1].image_file_name;  // "this." does not work in callbacks
+   full_path_to_image = gallery.pathToImages + image_json.image_list[1].image_file_name;  // "this." does not work in callbacks
    $('#static-image-img').attr( "src", full_path_to_image );
-   $('#static-image-figcaption').text( images[1].image_name );
-   $('#static-image-frontpage-blurb').text( images[1].frontpage_blurb );
+   $('#static-image-figcaption').text( image_json.image_list[1].image_name );
+   $('#static-image-frontpage-blurb').text( image_json.image_list[1].frontpage_blurb );
+   //
+   // Compile the handlebars template and give it our image data
+   //
+   var source_html = $("#gallery-image-template").html();
+   var template = Handlebars.compile( source_html );
+   var handelbars_html = template( image_json );
+   alert( handelbars_html );
+   // $('#all-gallery-images').html( handelbars_html );
+   $('#all-gallery-images').html( '<p>A paragraph of html for your sanity checkings.</p>' );
 }
 
 /**
