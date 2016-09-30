@@ -24,7 +24,12 @@
 
   <!-- Start of handlbars template - based on the static image -->
   <script id="gallery-image-template" type="text/x-handlebars-template">
-    {{#each images}}
+    <section id="gallery-description">
+      <h3>
+          {{name_of_gallery}} Gallery</h3>
+      <p>{{description_of_gallery}}</p>
+    </section><!-- #gallery-description -->
+    {{#each image_list}}
       <div class="row">
         <div class="col-md-3">
           <div class="gallery-image">
@@ -79,14 +84,9 @@
 
   <main>
     <div class="container">
-      <section id="gallery-description">
-        <h3>
-          <span id="name-of-gallery"></span> Gallery</h3>
-        <p id="description-of-gallery"></p>
-      </section><!-- #gallery-description -->
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
           <section id="gallery-debug">
             <h3>Gallery - Sanity Checking/Debugging</h3>
             <p>
@@ -100,16 +100,13 @@
             <p>
               </p>
           </section><!-- #gallery-debug -->
-        </div><!-- .col-md-12 -->
-      </div><!-- .row -->
-
-      <section id="static-gallery-image">
-        <div class="row">
+        </div><!-- .col-md-9 -->
 
 <!-- Start of static image (prototype for our handlbars template) -->
-          <div class="col-md-3">
+        <div class="col-md-3">
+          <section id="static-gallery-image">
             <div class="gallery-image">
-            <h3>Temp. Static Image</h3>
+            <h3>Exp.</h3>
               <figure>
                 <img id="static-image-img" src="" class="gallery-img">
                 <figcaption id="static-image-figcaption">
@@ -118,12 +115,11 @@
               <p id="static-image-frontpage-blurb">
                </p>
             </div><!-- .gallery-image -->
-          </div><!-- .col-md-3 -->
+          </section><!-- #static-gallery-image -->
+        </div><!-- .col-md-3 -->
 <!-- End of static image (prototype for our handlbars template) -->
 
         </div><!-- .row -->
-      </section><!-- #static-gallery-image -->
-
 
       <section id="all-gallery-images">
         <!-- All of this content is generated using the handlbars template and -->
