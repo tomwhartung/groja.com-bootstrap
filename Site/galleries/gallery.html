@@ -70,29 +70,80 @@
         <p id="description-of-gallery"></p>
       </section><!-- #gallery-description -->
 
-      <section id="gallery-images">
-        <h3>Gallery</h3>
-        <p>
-          Gallery to show: <span id="gallery-to-show"></span></p>
-        <p>
-          Json file name: <span id="json-file-name"></span></p>
-        <p>
-          Number of images: <span id="number-of-images"></span></p>
-        <p>
-          Path to images: <span id="path-to-images"></span></p>
-        <ul class="standalone">
-          <li>
-            Image[0].id: <span id="image-zero-id"></span></li>
-          <li>
-            Image[0].image_name: <span id="image-zero-image-name"></span></li>
-          <li>
-            Image[0].image_file_name: <span id="image-zero-image-file-name"></span></li>
-          <li>
-            Image[0].four_letter_type: <span id="image-zero-four-letter-type"></span></li>
-        </ul>
-        <p>
-          </p>
-      </section><!-- #gallery-images -->
+      <div class="row">
+        <div class="col-md-8">
+          <section id="gallery-debug">
+            <h3>Gallery</h3>
+            <p>
+              Gallery to show: <span id="gallery-to-show"></span></p>
+            <p>
+              Json file name: <span id="json-file-name"></span></p>
+            <p>
+              Number of images: <span id="number-of-images"></span></p>
+            <p>
+              Path to images: <span id="path-to-images"></span></p>
+            <p>
+              </p>
+          </section><!-- #gallery-debug -->
+        </div><!-- .col-md-8 -->
+        <div class="col-md-4">
+          <section id="gallery-image-data">
+            <ul class="standalone">
+              <li>
+                images[0].id: <span id="image-zero-id"></span></li>
+              <li>
+                images[0].image_name: <span id="image-zero-image-name"></span></li>
+              <li>
+                images[0].four_letter_type: <span id="image-zero-four-letter-type"></span></li>
+              <li>
+                images[0].image_file_name: <span id="image-zero-image-file-name"></span></li>
+              <li>
+                image-zero-full-path-to-image: <span id="image-zero-full-path-to-image"></span></li>
+            </ul>
+          </section><!-- #gallery-image-data -->
+        </div><!-- .col-md-4 -->
+      </div><!-- .row -->
+
+      <section id="static-gallery-image">
+        <div class="row">
+
+<!-- Static image: This is about where our handlbars template will start -->
+          <div class="col-md-3">
+            <div class="gallery-image">
+              <figure>
+                <img id="static-image-img" src="" class="gallery-img">
+                <figcaption id="static-image-figcaption">
+                  </figcaption>
+              </figure>
+              <p id="static-image-frontpage-blurb">
+               </p>
+            </div><!-- .gallery-image -->
+          </div><!-- .col-md-3 -->
+<!-- Static image: This is about where our handlbars template will end -->
+
+        </div><!-- .row -->
+      </section><!-- #static-gallery-image -->
+
+
+      <section id="all-gallery-images">
+        <div class="row">
+
+<!-- Start of handlbars template - based on the static image -->
+          <div class="col-md-3">
+            <div class="gallery-image">
+              <figure>
+                <img src="images/site/infp-tomh_1987-scaled_200x200.gif" class="gallery-img">
+                <figcaption>
+                  </figcaption>
+              </figure>
+              <p>
+               </p>
+            </div><!-- .gallery-image -->
+          </div><!-- .col-md-3 -->
+<!-- End of handlbars template - based on the static image -->
+
+        </div><!-- .row -->
+      </section><!-- #all-gallery-images -->
 
       <footer>
         Copyright &copy; 2016
@@ -109,6 +160,7 @@
   <script src="../js/vendor/bootstrap.min.js"></script>
   <script src="../js/main.js"></script>
 
+  <script src="../js/vendor/handlebars-v4.0.5.js"></script>
   <script src="gallery.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
