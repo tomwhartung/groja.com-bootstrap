@@ -78,8 +78,8 @@ gallery.getQueryVariable = function (variable) {
  * Once we have the gallery to show, we can set its name and the description.
  */
 gallery.populateNameAndDescription = function() {
-   $('#name-of-gallery').text( this.name[this.galleryToShow] );
-   $('#description-of-gallery').text( this.description[this.galleryToShow] );
+   $('#name-of-gallery').text( this.name[this.gallery_to_show] );
+   $('#description-of-gallery').text( this.description[this.gallery_to_show] );
 }
 
 /**
@@ -89,16 +89,16 @@ gallery.populateGallery = function( image_json ) {
    //
    // For debugging - remove when page works ok for all galleries
    //
-   $('#gallery-to-show').text( gallery.galleryToShow );
-   $('#json-file-name').text( gallery.jsonFileName );
+   $('#gallery-to-show').text( gallery.gallery_to_show );
+   $('#json-file-name').text( gallery.json_file_name );
    $('#number-of-images').text( image_json.image_list.length );
-   $('#path-to-images').text( gallery.pathToImages );
+   $('#path-to-images').text( gallery.path_to_images );
 
    var full_path_to_image;
    //
    // our first image is a static image - also remove when everything is working
    //
-   full_path_to_image = gallery.pathToImages + image_json.image_list[1].image_file_name;  // "this." does not work in callbacks
+   full_path_to_image = gallery.path_to_images + image_json.image_list[1].image_file_name;  // "this." does not work in callbacks
    $('#static-image-img').attr( "src", full_path_to_image );
    $('#static-image-figcaption').text( image_json.image_list[1].image_name );
    $('#static-image-frontpage-blurb').text( image_json.image_list[1].frontpage_blurb );
@@ -108,9 +108,7 @@ gallery.populateGallery = function( image_json ) {
    var source_html = $("#gallery-image-template").html();
    var template = Handlebars.compile( source_html );
    var handelbars_html = template( image_json );
-   alert( handelbars_html );
-   // $('#all-gallery-images').html( handelbars_html );
-   $('#all-gallery-images').html( '<p>A paragraph of html for your sanity checkings.</p>' );
+   $('#all-gallery-images').html( handelbars_html );
 }
 
 /**
@@ -121,9 +119,9 @@ gallery.populateGallery = function( image_json ) {
  *
  * Get the name of the gallery to show from the query variable (in the url)
  */
-gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
-gallery.jsonFileName = 'json/' + gallery.galleryToShow + '.json';
-gallery.pathToImages = '../../images/galleries/' + gallery.galleryToShow + '/';
+gallery.gallery_to_show = gallery.getQueryVariable( 'gallery' );
+gallery.json_file_name = 'json/' + gallery.gallery_to_show + '.json';
+gallery.path_to_images = '../../images/galleries/' + gallery.gallery_to_show + '/';
 
 /*
  * (1) Fill in the name and description of the gallery.
@@ -132,6 +130,6 @@ gallery.pathToImages = '../../images/galleries/' + gallery.galleryToShow + '/';
  */
 gallery.populateNameAndDescription();
 
-$.getJSON( gallery.jsonFileName, gallery.populateGallery );
+$.getJSON( gallery.json_file_name, gallery.populateGallery );
 
 
