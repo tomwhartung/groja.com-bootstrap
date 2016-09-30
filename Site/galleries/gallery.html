@@ -20,8 +20,26 @@
   </style>
   <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="../css/main.css">
-
   <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+  <!-- Start of handlbars template - based on the static image -->
+  <script id="gallery-image-template" type="text/x-handlebars-template">
+    {{#each images}}
+      <div class="row">
+        <div class="col-md-3">
+          <div class="gallery-image">
+            <figure>
+              <img src="{{full_path_to_image}}" class="gallery-img">
+              <figcaption>{{image_name}}
+                </figcaption>
+            </figure>
+            <p>{{frontpage_blurb}}</p>
+          </div><!-- .gallery-image -->
+        </div><!-- .col-md-3 -->
+      </div><!-- .row -->
+    {{/each}}
+  </script>
+  <!-- End of handlbars template - based on the static image -->
 </head>
 
 <body>
@@ -91,6 +109,7 @@
 <!-- Start of static image (prototype for our handlbars template) -->
           <div class="col-md-3">
             <div class="gallery-image">
+            <h3>Temp. Static Image</h3>
               <figure>
                 <img id="static-image-img" src="" class="gallery-img">
                 <figcaption id="static-image-figcaption">
@@ -107,23 +126,8 @@
 
 
       <section id="all-gallery-images">
-        <div class="row">
-
-<!-- Start of handlbars template - based on the static image -->
-          <div class="col-md-3">
-            <div class="gallery-image">
-              <figure>
-                <img src="" class="gallery-img">
-                <figcaption>
-                  </figcaption>
-              </figure>
-              <p>
-               </p>
-            </div><!-- .gallery-image -->
-          </div><!-- .col-md-3 -->
-<!-- End of handlbars template - based on the static image -->
-
-        </div><!-- .row -->
+        <!-- All of this content is generated using the handlbars template and -->
+        <!-- the data in the selected json file. -->
       </section><!-- #all-gallery-images -->
 
       <footer>
