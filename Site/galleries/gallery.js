@@ -85,33 +85,37 @@ gallery.populateNameAndDescription = function() {
    //
    $('#gallery-to-show').text( this.galleryToShow );
    $('#json-file-name').text( this.jsonFileName );
-}
-
-/**
- * Get the json file for the gallery to show,
- * setting a callback to populate the gallery with
- * each image and its corresponding data.
- */
-gallery.getJsonAndPopulateGallery = function() {
-   $.getJSON( this.jsonFileName, gallery.populateGallery );
+   $('#path-to-images').text( this.pathToImages );
 }
 
 /**
  * Callback from getJSON call that processes the JSON we get
  */
 gallery.populateGallery = function( images ) {
-
    console.log( 'images.length = ' + images.length );
    $('#number-of-images').text( images.length );
    $('#image-zero-id').text( images[0].id );
    $('#image-zero-image-name').text( images[0].image_name );
+   $('#image-zero-image-file-name').text( images[0].image_file_name );
    $('#image-zero-four-letter-type').text( images[0].four_letter_type );
 }
 
+/**
+ ************************************
+ * Code to call the functions in the proper sequence
+ ************************************
+ */
+
+/*
+ * Get the name of the gallery to show from the query variable (in the url)
+ * Get the corresponding json file containing the data for the gallery to show
+ *   setting a callback function to populate the gallery with each image and its data.
+ */
 gallery.galleryToShow = gallery.getQueryVariable( 'gallery' );
 gallery.jsonFileName = 'json/' + gallery.galleryToShow + '.json';
-
+gallery.pathToImages = '../images/galleries/' + gallery.galleryToShow + '/';
 gallery.populateNameAndDescription();
-gallery.getJsonAndPopulateGallery();
+
+$.getJSON( gallery.jsonFileName, gallery.populateGallery );
 
 
