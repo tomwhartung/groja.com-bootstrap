@@ -29,8 +29,12 @@
           {{name_of_gallery}} Gallery</h3>
       <p>{{description_of_gallery}}</p>
     </section><!-- #gallery-description -->
-    {{#each image_list}}
-      <div class="row">
+    <div class="row">
+      {{#each image_list}}
+        {{#if add_row_separator}}
+          </div><!-- .row -->
+          <div class="row">
+        {{/if}}
         <div class="col-md-3">
           <div class="gallery-image">
             <figure>
@@ -41,8 +45,8 @@
             <p>{{frontpage_blurb}}</p>
           </div><!-- .gallery-image -->
         </div><!-- .col-md-3 -->
-      </div><!-- .row -->
-    {{/each}}
+      {{/each}}
+    </div><!-- .row -->
   </script>
   <!-- End of handlbars template - based on the static image -->
 </head>
