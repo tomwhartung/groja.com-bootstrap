@@ -105,18 +105,23 @@ gallery.populateGallery = function( image_json ) {
    //
    // Compile the handlebars template
    // Add the full path to the image to the image data
+   // After every "columns" images, set "add_row_separator" to a truesy value and add it to the image data
    // Give the handlebars template the resultant image data to get the html
    // Add the html to the document in the appropriate place
    //
+   var num_columns = 4;
    var handlebars_html = $("#gallery-image-template").html();
    var handlebars_template = Handlebars.compile( handlebars_html );
    console.log( 'image_json.image_list.length: ' + image_json.image_list.length );
    for( var data_sub = 0; data_sub < image_json.image_list.length; data_sub++ ) {
-      console.log( 'image_json.image_list[data_sub].image_file_name: ' + image_json.image_list[data_sub].image_file_name );
       image_json.image_list[data_sub].full_path_to_image = gallery.path_to_images +
          image_json.image_list[data_sub].image_file_name;
-      // image_json.image_list[data_sub].image_file_name = gallery.path_to_images +
-      //    image_json.image_list[data_sub].image_file_name;
+      if( (data_sub % num_columns) == 0 && data_sub != 0 ) {
+         image_json.image_list[data_sub].add_row_separator = true;
+      } else {
+         image_json.image_list[data_sub].add_row_separator = false;
+      }
+      console.log( 'image_json.image_list[data_sub].add_row_separator: ' + image_json.image_list[data_sub].add_row_separator );
       console.log( 'image_json.image_list[data_sub].full_path_to_image: ' + image_json.image_list[data_sub].full_path_to_image );
    }
    var gallery_html = handlebars_template( image_json );
