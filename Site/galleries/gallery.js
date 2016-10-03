@@ -75,14 +75,6 @@ gallery.getQueryVariable = function (variable) {
 }
 
 /**
- * Once we have the gallery to show, we can set its name and the description.
- */
-gallery.populateNameAndDescription = function() {
-   $('#name-of-gallery').text( this.name[this.gallery_to_show] );
-   $('#description-of-gallery').text( this.description[this.gallery_to_show] );
-}
-
-/**
  * Callback from getJSON call that processes the JSON we get
  */
 gallery.populateGallery = function( image_json ) {
@@ -116,19 +108,15 @@ gallery.populateGallery = function( image_json ) {
  * call the functions in the proper sequence
  ********************************************
  *
- * Get the name of the gallery to show from the query variable (in the url)
- */
-gallery.gallery_to_show = gallery.getQueryVariable( 'gallery' );
-gallery.json_file_name = 'json/' + gallery.gallery_to_show + '.json';
-gallery.path_to_images = '../../images/galleries/' + gallery.gallery_to_show + '/';
-
-/*
- * (1) Fill in the name and description of the gallery.
+ * (1) Get the name of the gallery to show from the query variable (in the url)
  * (2) Get the corresponding json file containing the data for the gallery to show,
  *     setting a callback function to populate the gallery with each image and its data.
  */
-gallery.populateNameAndDescription();
+gallery.gallery_to_show = gallery.getQueryVariable( 'gallery' );      // (1)
 
-$.getJSON( gallery.json_file_name, gallery.populateGallery );
+gallery.json_file_name = 'json/' + gallery.gallery_to_show + '.json';
+gallery.path_to_images = '../../images/galleries/' + gallery.gallery_to_show + '/';
+
+$.getJSON( gallery.json_file_name, gallery.populateGallery );         // (2)
 
 
