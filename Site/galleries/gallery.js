@@ -97,7 +97,6 @@ gallery.populateGallery = function( image_json ) {
    var num_columns = 4;
    var handlebars_html = $("#gallery-image-template").html();
    var handlebars_template = Handlebars.compile( handlebars_html );                   // (1)
-   console.log( 'image_json.image_list.length: ' + image_json.image_list.length );
    for( var data_sub = 0; data_sub < image_json.image_list.length; data_sub++ ) {
       image_json.image_list[data_sub].full_path_to_image = gallery.path_to_images +   // (2)
          image_json.image_list[data_sub].image_file_name;
@@ -106,8 +105,6 @@ gallery.populateGallery = function( image_json ) {
       } else {
          image_json.image_list[data_sub].add_row_separator = false;
       }
-      console.log( 'image_json.image_list[data_sub].add_row_separator: ' + image_json.image_list[data_sub].add_row_separator );
-      console.log( 'image_json.image_list[data_sub].full_path_to_image: ' + image_json.image_list[data_sub].full_path_to_image );
    }
    var gallery_html = handlebars_template( image_json );    // (4)
    $('#all-gallery-images').html( gallery_html );           // (5)
