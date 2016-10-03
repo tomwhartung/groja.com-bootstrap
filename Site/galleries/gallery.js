@@ -87,28 +87,13 @@ gallery.populateNameAndDescription = function() {
  */
 gallery.populateGallery = function( image_json ) {
    //
-   // For debugging - remove when page works ok for all galleries
-   //
-   $('#gallery-to-show').text( gallery.gallery_to_show );
-   $('#json-file-name').text( gallery.json_file_name );
-   $('#number-of-images').text( image_json.image_list.length );
-   $('#path-to-images').text( gallery.path_to_images );
-
-   var full_path_to_image;
-   //
-   // our first image is a static image - remove when everything is working
-   //
-   full_path_to_image = gallery.path_to_images + image_json.image_list[1].image_file_name;  // "this." does not work in callbacks
-   $('#static-image-img').attr( "src", full_path_to_image );
-   $('#static-image-figcaption').text( image_json.image_list[1].image_name );
-   $('#static-image-frontpage-blurb').text( image_json.image_list[1].frontpage_blurb );
-   //
    // Compile the handlebars template
    // Add the full path to the image to the image data
    // After every "columns" images, set "add_row_separator" to a truesy value and add it to the image data
    // Give the handlebars template the resultant image data to get the html
    // Add the html to the document in the appropriate place
    //
+   var full_path_to_image;
    var num_columns = 4;
    var handlebars_html = $("#gallery-image-template").html();
    var handlebars_template = Handlebars.compile( handlebars_html );
