@@ -2,35 +2,51 @@
 
 Code for groja.com .
 
-### MasterPlan
+## MasterPlan
 
-Be mindful that the MasterPlan is to do the same thing or something very similar using:
+After reading a lot about marketing and the new Google Analytics, etc., I've decided to define this site's purpose as follows:
 
-* HTML5, CSS, and JavaScript,
-* Python and Django, and
-* Node.js and React,
+## Combo site
 
-then compare the process, results, and ease of scalability.
+As learned in the Google Analytics (GA) "Getting Started" class, we can define this site as having two purposes:
 
-So be on the lookout for opportunities to share non-react-dependent JavaScript, HTML, or CSS between the two!
+* The Groja project's lead Generation site
+* The Groja project's e-commerce site
 
-## static_image_gallery - goals
+The idea is to find people who are willing to purchase a Spiritual Portrait of themself, and later,
+to begin to automate the sales process to the extent that we can.
 
-The main goal at this time is get a django site running on my server, no matter how simplistic, asap.
+### Lead-generation site
+
+As a lead-generation site, this site has the following purposes:
+
+* Drive traffic to groja.com our parallel lead generation and e-commerce site
+* Gather email addresses for an occasional emails containing special offers
+
+To begin with, this is the primary purpose.
+
+### E-Commerce site
+
+As an E-commerce site, this site has the following purposes:
+
+* Coordinating the billing for and purchase of Spiritual Portraits
+* Possibly allow selling of printed portraits, or groupings of portraits, or ???
+
+To begin with, this is a secondary purpose.
 
 ## Requirements
 
 ### Pages
 
-The Static Image Gallery shall contain the following pages, with content as described.
+These are the pages (menu options):
 
-* Home Page: static; briefly describe what the site is about and include a self-portrait
-* List of Galleries: (possibly) driven by JSON data
-* Set of GRoJA Images: driven by JSON data
-* Single Image Display - Popup: contains the image, its title and description and navigation/close button only
-* About: static; more information, and links to other sites and a Contact Me page
+* Home Page: landing page to gather leads
+* About: information about the idea, etc.
+* Books and Sites: lists of and links to background information
+* Your Portrait: information about how to get your portrait, and how much it will cost
+* Link to galleries on seeourminds.com
 
-This is the bulk of the project: routes (urls) and views.
+This is the bulk of the project: routes (urls) and views, so Flask is ideal.
 
 ### Navigation and urls
 
