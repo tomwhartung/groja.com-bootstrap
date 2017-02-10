@@ -50,5 +50,5 @@ if __name__ == '__main__' :
    else:
       debug_mode = False
 
-   print( 'debug_mode:', debug_mode )
+   ## print( 'debug_mode:', debug_mode )
    app.run( debug=debug_mode )
