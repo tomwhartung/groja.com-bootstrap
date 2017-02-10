@@ -116,9 +116,14 @@ python3 groja.py  # http://127.0.0.1:5000/
 
 Commit changes to github (if that hasn't been done already).
 
-#### Step (4) Update apache config
+#### Step (4) Update apache config, restart apache, and test
 
 We need to run it through wsgi, so model the new file after 050-seeourminds.com.conf .
+
+References for updating the apache .conf file:
+
+- http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/#creating-a-wsgi-file
+- http://www.jakowicz.com/flask-apache-wsgi/
 
 As root:
 
@@ -127,14 +132,29 @@ As root:
 cd /etc/apache2/sites-available
 rd 020-groja.com.conf           # ensure current version is checked in
 vi 020-groja.com.conf
+service apache2 stop
+service apache2 start
 ```
 
 Test:
 
 - http://jane.groja.com/
 
-
 #### Step (5) Deploy to barbara
+
+##### 5.1 Update apache config
+
+##### 5.2 Pull code
+
+##### 5.3 Restart apache
+
+```
+sudo service apache2 stop ; sleep 2 ; sudo service apache2 start
+```
+
+##### 5.4 Test
+
+- http://barbara.groja.com/
 
 #### Step (6) Deploy to ava
 
