@@ -37,28 +37,75 @@ As an E-commerce site, this site has the following purposes:
 
 To begin with, this is a secondary purpose to be implemented on the Your Portraits page.
 
-## Updates
+## 2017-02-10 Migration to Flask
 
-In light of these decisions, I've decided to move the gallery to seeourminds.com .
+In light of these decisions, I've decided to:
 
-### 2017-02-10 Migration to Flask
+* Move the gallery to seeourminds.com .
+* Replace the static site with one that uses Flask.
 
-Replacing the static site with one that uses Flask.
-
-#### Proof of concept:
+### Proof of concept:
 
 We tested this out already - twice! For details see:
 
 - https://github.com/tomwhartung/always_learning_python/tree/master/6-flask_templates_exp
 - https://github.com/tomwhartung/always_learning_python/tree/master/7-flask_bootstrap_exp
 
+**There's a lot of information there, that we will not repeat here!**
+
 These are very very similar.  It's pretty much a matter of whether we include bootstrap manually or use flask_bootstrap.
 
 We are going with the second (7-flask_bootstrap_exp) version.
 
+### Process overview
+
+Following is an overview of the process used.
+
+1. Remove old and copy new files
+2. Install flask and flask-bootstrap
+3. Test on localhost
+3.1 hello.py
+3.2 groja.py
+
+4. Update apache config and test
+
+
 #### Details
 
 Following are some details with respect to this adventure.
+
+##### Installation
+
+Test installation of flask:
+
+```
+python3
+>>> import flask
+```
+
+Hopefully there's no error, else see references above (in the always_learning_python repo).
+
+As root:
+
+```
+(sudo su -)
+pip3 install flask-bootstrap
+```
+
+##### Running hello.py
+
+```
+gogg              # /var/www/groja.com/htdocs/groja.com
+cd Site
+python3 hello.py  # 
+```
+
+##### Running groja.py
+
+```
+```
+
+
 
 
 ## Requirements
