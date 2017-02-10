@@ -66,9 +66,9 @@ Following is an overview of the process used.
 3. Test on localhost
 3.1 hello.py
 3.2 groja.py
-
 4. Update apache config and test
-
+5. Deploy to backup host (barbara)
+6. Deploy to production host (ava)
 
 ### Details
 
@@ -115,6 +115,28 @@ python3 groja.py  # http://127.0.0.1:5000/
 ```
 
 Commit changes to github (if that hasn't been done already).
+
+#### Step (4) Update apache config
+
+We need to run it through wsgi, so model the new file after 050-seeourminds.com.conf .
+
+As root:
+
+```
+(sudo su -)
+cd /etc/apache2/sites-available
+rd 020-groja.com.conf           # ensure current version is checked in
+vi 020-groja.com.conf
+```
+
+Test:
+
+- http://jane.groja.com/
+
+
+#### Step (5) Deploy to barbara
+
+#### Step (6) Deploy to ava
 
 
 
