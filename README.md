@@ -41,6 +41,26 @@ To begin with, this is a secondary purpose to be implemented on the Your Portrai
 
 In light of these decisions, I've decided to move the gallery to seeourminds.com .
 
+### 2017-02-10 Migration to Flask
+
+Replacing the static site with one that uses Flask.
+
+#### Proof of concept:
+
+We tested this out already - twice! For details see:
+
+- https://github.com/tomwhartung/always_learning_python/tree/master/6-flask_templates_exp
+- https://github.com/tomwhartung/always_learning_python/tree/master/7-flask_bootstrap_exp
+
+These are very very similar.  It's pretty much a matter of whether we include bootstrap manually or use flask_bootstrap.
+
+We are going with the second (7-flask_bootstrap_exp) version.
+
+#### Details
+
+Following are some details with respect to this adventure.
+
+
 ## Requirements
 
 ### Pages
