@@ -42,5 +42,13 @@ def yourportrait() :
 # Run the app!
 #
 if __name__ == '__main__' :
-   app.run( debug=True )
+   import socket
+   hostname = socket.gethostname()
 
+   if hostname == 'jane':
+      debug_mode = True
+   else:
+      debug_mode = False
+
+   print( 'debug_mode:', debug_mode )
+   app.run( debug=debug_mode )
