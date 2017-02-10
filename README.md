@@ -70,11 +70,15 @@ Following is an overview of the process used.
 4. Update apache config and test
 
 
-#### Details
+### Details
 
 Following are some details with respect to this adventure.
 
-##### Installation
+#### Step (1) Remove old and copy new files
+
+Use git rm -fr and git add --all .
+
+#### Step (2) Installation
 
 Test installation of flask:
 
@@ -85,6 +89,10 @@ python3
 
 Hopefully there's no error, else see references above (in the always_learning_python repo).
 
+**We are doing super-basic stuff at this time, so do not worry about versions.**
+
+If flask-bootstrap is not installed globally, here's how to fix that:
+
 As root:
 
 ```
@@ -92,19 +100,21 @@ As root:
 pip3 install flask-bootstrap
 ```
 
-##### Running hello.py
+#### Step (3) Running hello.py and groja.py locally
 
 ```
 gogg              # /var/www/groja.com/htdocs/groja.com
 cd Site
-python3 hello.py  # 
+python3 hello.py  # http://127.0.0.1:5000/
 ```
 
-##### Running groja.py
+Ensure that works before proceeding.
 
 ```
+python3 groja.py  # http://127.0.0.1:5000/
 ```
 
+Commit changes to github (if that hasn't been done already).
 
 
 
