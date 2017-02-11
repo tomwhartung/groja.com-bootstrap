@@ -1,6 +1,17 @@
 # groja.com
 
-Experimental code for groja.com .
+Experimental code for groja.com is now in the groja.com-static repo:
+
+- https://github.com/tomwhartung/groja.com-static
+
+The original version of this file is still available, online and locally:
+
+- https://github.com/tomwhartung/groja.com-static/blob/master/exp/README.md
+- file:///var/www/groja.com/htdocs/groja.com-static/exp/README.md
+
+The index.html file is available on jane here:
+
+- file:///var/www/groja.com/htdocs/groja.com-static/exp/index.html
 
 ### Versions
 
