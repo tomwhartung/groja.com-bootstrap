@@ -1,12 +1,14 @@
 # groja.com
 
-Code for groja.com .
+This repo contains the code for groja.com .
+
+For the Requirements used to create this, see the README-Requirements.md file in this directory.
 
 ## MasterPlan
 
 After reading a lot about marketing and the new Google Analytics, etc., I've decided to define this site's purpose as follows:
 
-## Combo site
+## Lead-generation -> Possible combo site
 
 As learned in the Google Analytics (GA) "Getting Started" class, we can define this site as having two purposes:
 
@@ -16,7 +18,7 @@ As learned in the Google Analytics (GA) "Getting Started" class, we can define t
 The idea is to find people who are willing to purchase a Spiritual Portrait of themself, and later,
 to begin to automate the sales process to the extent that we can.
 
-### Lead-generation site
+### (1) First and foremost: Lead-generation site
 
 As a lead-generation site, this site has the following purposes:
 
@@ -28,7 +30,7 @@ To begin with, this is the site's primary purpose, to be implemented:
 * On the Home page
 * Possibly in the aside area on other pages
 
-### E-Commerce site
+### (2) Later (maybe): E-Commerce site
 
 As an E-commerce site, this site has the following purposes:
 
@@ -142,20 +144,46 @@ Test:
 
 #### Step (5) Deploy to barbara
 
-##### 5.1 Update apache config
+##### 5.1 Verify installation of flask and flask-bootstrap
 
-##### 5.2 Pull code
+We are just starting out so it's ok to install the current default version(s) globally.
 
-##### 5.3 Restart apache
+We can worry about virtual environments when it comes to upgrading.
+
+As tomh:
+```
+python3
+>>> import flask
+>>> import flask_bootstrap
+
+```
+
+As root (if necessary):
+```
+pip3 install flask-bootstrap
+```
+
+Root permissions are needed to install it in /usr/bin .
+
+##### 5.2 Update apache config
+
+Copy and paste, and verify it looks good.
+
+##### 5.3 Pull code
+
+Decided to preserve the old static in a new repo, groja.com-static , for easy possible future reference.
+
+##### 5.4 Restart apache
 
 ```
 sudo service apache2 stop ; sleep 2 ; sudo service apache2 start
 ```
 
-##### 5.4 Test
+##### 5.5 Test
 
 - http://barbara.groja.com/
 
 #### Step (6) Deploy to ava
+
 
 
