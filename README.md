@@ -144,7 +144,7 @@ Test:
 
 #### Step (5) Deploy to barbara
 
-##### 5.1 Verify installation of flask and flask-bootstrap
+##### 5.1 Verify installation of flask and flask_bootstrap
 
 We are just starting out so it's ok to install the current default version(s) globally.
 
@@ -176,7 +176,7 @@ Decided to preserve the old static in a new repo, groja.com-static , for easy po
 ##### 5.4 Restart apache
 
 ```
-sudo service apache2 stop ; sleep 2 ; sudo service apache2 start
+sudo service apache2 restart
 ```
 
 ##### 5.5 Test
@@ -185,5 +185,37 @@ sudo service apache2 stop ; sleep 2 ; sudo service apache2 start
 
 #### Step (6) Deploy to ava
 
+This is essentially the same process used on barbara.  For details, see above for the process used on that host.
 
+##### 6.1 Verify installation of flask and flask_bootstrap
+
+As tomh:
+```
+python3
+>>> import flask
+>>> import flask_bootstrap
+
+```
+
+Install as root if necessary.
+
+##### 6.2 Update apache config
+
+Copy and paste, and verify it looks good.
+
+##### 6.3 Pull code
+
+```
+gp   # my super-cool alias for git pull, cos I run it rather frequently :-)
+```
+
+##### 6.4 Restart apache
+
+```
+sudo service apache2 restart
+```
+
+##### 6.5 Test
+
+- http://ava.groja.com/
 
