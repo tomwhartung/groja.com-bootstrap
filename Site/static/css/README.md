@@ -4,7 +4,7 @@
 * bootstrap*.map files - ok to ignore
 * bootstrap*.css files - DO NOT EDIT
 * main.css - not sure where these styles came from, but the comments look like ones I would make (*)
-* main-customizations.css - new file - PUT NEW STYLES HERE
+* groja.css - new file - PUT NEW STYLES HERE
 
 (*) Searched through the various directories in the always_learning_python repo for versions of this file.
 When getting started we tried out various options on the html5boilerplate download site.
