@@ -8,6 +8,26 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 
 app = Flask( __name__ )
+
+##
+# Load the configuration settings
+#
+from config import *
+app.config.from_object('config.Config')
+
+print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
+import socket
+hostname = socket.gethostname()
+
+if hostname == 'jane':
+   app.config.from_object('config.DevelopmentConfig')
+else:
+   app.config.from_object('config.ProductionConfig')
+
+print( 'TEMPLATES_AUTO_RELOAD 2: ', app.config['TEMPLATES_AUTO_RELOAD'] )
+
+## app.config.from_envvar('YOURAPPLICATION_SETTINGS')
+
 Bootstrap( app )
 
 ##
@@ -49,13 +69,5 @@ def contactme() :
 # Run the app!
 #
 if __name__ == '__main__' :
-   import socket
-   hostname = socket.gethostname()
-
-   if hostname == 'jane':
-      debug_mode = True
-   else:
-      debug_mode = False
-
-   ## print( 'debug_mode:', debug_mode )
+   print( 'debug_mode:', debug_mode )
    app.run( debug=debug_mode )
