@@ -12,6 +12,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config( object ):
    DEBUG = False
    TEMPLATES_AUTO_RELOAD = True
+   SEND_FILE_MAX_AGE_DEFAULT = 0
    CSRF_ENABLED = True
    SECRET_KEY = 'abcdefgHIJKLMNOPqRsTuVwXyZ'
 
@@ -26,4 +27,3 @@ class DevelopmentConfig( object ):
 class TestingConfig( object ):
    DEBUG = True
    TESTING = True
-
