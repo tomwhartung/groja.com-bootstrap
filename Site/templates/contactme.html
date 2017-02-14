@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+   {{ super() }}
+   <style>
+   </style>
+{% endblock %}
+{% block content %}
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <main class="jumbotron">
+    <div class="container">
+      <section id="intro">
+        <form>
+        	<div class="form-group"> <!-- Email field !-->
+        		<label for="email_id" class="control-label">Email</label>
+        		<input type="email" class="form-control" id="email_id" name="email_name" placeholder="name@domain.com">
+        	</div>
+        	<div class="form-group"> <!-- Submit button !-->
+        		<button type="submit" class="btn btn-primary">Submit</button>
+        	</div>
+        </form>
+      </section><!-- #intro -->
+      <p><a class="btn btn-primary btn-lg" href="yourportrait" role="button">Get your portrait &raquo;</a></p>
+    </div><!-- .container -->
+  </main><!-- .jumbotron -->
+
+  <div class="container">
+    <form>
+    	<div class="form-group"> <!-- Email field !-->
+    		<label for="email_id" class="control-label">Email</label>
+    		<input type="email" class="form-control" id="email_id" name="email_name" placeholder="name@domain.com">
+    	</div>
+
+    	<div class="form-group"> <!-- Submit button !-->
+    		<button type="submit" class="btn btn-primary">Submit</button>
+    	</div>
+    </form>
+    {{ super() }}
+  </div> <!-- .container -->
+
+{% endblock %}
