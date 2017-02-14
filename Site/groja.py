@@ -39,6 +39,13 @@ def yourportrait() :
    return render_template( 'yourportrait.html', yourportraitSelected='selected' )
 
 ##
+# Show the Books and Sites page:
+#
+@app.route( '/contactme' )
+def contactme() :
+   return render_template( 'contactme.html', contactmeSelected='selected' )
+
+##
 # Run the app!
 #
 if __name__ == '__main__' :
