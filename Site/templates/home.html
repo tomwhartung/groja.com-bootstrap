@@ -9,33 +9,72 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <main class="jumbotron">
     <div class="container">
-      <section id="intro">
-        <p>
-          GROJAs are Graphical Representations of Jungian Archetypes.</p>
-        <p>
-          Inspired by the work of Piet Mondrian, Carl Jung, Wassily Kandinsky,
-           Isabel Myers-Briggs, and David Keirsey, the Groja Program &copy;
-           creates Spiritual Portraits of individuals based on their score on
-           the MBTI &reg; or a similar personality questionnaire.</p>
-        <p>
-          To learn more, explore this site and the
-           <a href="http://seeourminds.com/galleries"
-              title="Link to the galleries page at seeourminds.com">
-             galleries at seeourminds.com.</a></p>
-        <p>
-          If you're ready to see your personality, or that of a friend or
-           loved one, click to learn how you can
-           <a href="yourportrait" title="Link to Your Portrait page">
-              get your own personalized GROJA</a>!</p>
-      </section><!-- #intro -->
-      <p>
-        <a class="btn btn-primary btn-lg" href="contactme" role="button">
-          Get Your Spiritual Portrait &raquo;</a></p>
+      <div class="row">
+        <div class="col-md-8">
+          <p>
+            GROJAs are Graphical Representations of Jungian Archetypes.</p>
+          <p>
+            Inspired by the work of Piet Mondrian, Carl Jung, Wassily Kandinsky,
+             Isabel Myers-Briggs, and David Keirsey, the Groja Program &copy;
+             creates Spiritual Portraits of individuals based on their score on
+             the MBTI &reg; or a similar personality questionnaire.</p>
+          <p>
+            To learn more, explore this site and the
+             <a href="http://seeourminds.com/galleries" target="_blank"
+                title="Link to the galleries page at seeourminds.com">
+               galleries at seeourminds.com.</a></p>
+          <p>
+            If you're ready to see your personality, or that of a friend or
+             loved one, click to learn how you can
+             <a href="yourportrait" title="Link to Your Portrait page">
+                get your own personalized GROJA</a>!</p>
+          <p>
+            <a class="btn btn-primary btn-lg" href="contactme" role="button">
+              Get Your Spiritual Portrait &raquo;</a></p>
+        </div><!-- .col-md-8 -->
+      <div class="col-md-4">
+        <div class="sidebox">
+          <figure>
+            <img src="{{ url_for('static', filename='images/site/infp-tomh_1987-scaled_200x200.gif') }}" class="sidebox-img">
+            <figcaption>
+              Tom H 1987: INFP</figcaption>
+          </figure>
+          <p>
+            When I first learned that I was an INFP, it was life-altering.
+            I would like to help you on a similar journey of greater self-awareness!</p>
+        </div><!-- .sidebox -->
+      </div><!-- .col-md-4 -->
+  </div><!-- .row -->
     </div><!-- .container -->
   </main><!-- .jumbotron -->
 
   <div class="container">
-    <!-- Experimental row of columns - or maybe just the one -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>About</h2>
+        <p>
+          Learn about the history of the Groja Program &copy;</p>
+        <p>
+          <a class="btn btn-default" href="about" role="button">
+            About Grojas &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Books and Sites</h2>
+        <p>
+          I wrote the first version of this program in the 1980s,
+           before the internet.
+          So the original idea came totally from books.
+          Of course much of that is online now, waiting for you to check it out!</p>
+        <p><a class="btn btn-default" href="booksandsites" role="button">
+          Books and Sites &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Galleries</h2>
+        <p>
+          See examples of many Spiritual Portraits in the Galleries.</p>
+        <p><a class="btn btn-default" href="galleries" role="button">View Galleries &raquo;</a></p>
+      </div>
+    </div><!-- .row -->
     <div class="row">
       <div class="col-md-8">
         <h3>Welcome to the <span class="air-quotes">Spiritual Portrait</span> Site</h3>
@@ -54,41 +93,6 @@
           My wish is to honor, carry on, and build on the work of my predecessors without
           stepping on any toes, legal or otherwise.</p>
       </div><!-- .col-md-8 -->
-      <div class="col-md-4">
-        <div class="sidebox">
-          <figure>
-            <img src="{{ url_for('static', filename='images/site/infp-tomh_1987-scaled_200x200.gif') }}" class="sidebox-img">
-            <figcaption>
-              Tom H 1987: INFP</figcaption>
-          </figure>
-          <p>
-            When I first learned that I was an INFP, it was life-altering.
-            I would like to help you on a similar journey of greater self-awareness!</p>
-        </div><!-- .sidebox -->
-      </div><!-- .col-md-4 -->
-    </div><!-- .row -->
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2>About</h2>
-        <p>
-          Learn about the history of the Groja Program &copy;</p>
-        <p><a class="btn btn-default" href="about" role="button">About Grojas &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Galleries</h2>
-        <p>
-          See examples of many Spiritual Portraits in the Galleries.</p>
-        <p><a class="btn btn-default" href="galleries" role="button">View Galleries &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Books and Sites</h2>
-        <p>
-          I wrote the first version of this program in the 1980s, before the internet.
-          So all of the original idea came from books.
-          Of course a lot of that is online now, in varying degrees of quality.</p>
-        <p><a class="btn btn-default" href="booksandsites" role="button">Books and Sites &raquo;</a></p>
-      </div>
     </div><!-- .row -->
     {{ super() }}
   </div> <!-- .container -->
