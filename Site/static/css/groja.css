@@ -4,3 +4,7 @@
  * For details, see the README.md file in this directory.
  */
 
+.jumbotron h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
