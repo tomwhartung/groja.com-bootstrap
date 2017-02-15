@@ -1,8 +1,9 @@
 ##
-# From Chapter 3 of the "Flask Web Development" book
-# --------------------------------------------------
+# Link routes to their corresponding templates
+# --------------------------------------------
+# This is mostly a static site so there's not much here
 #
-# Experimenting with templates
+# Reference: Chapter 3 of the "Flask Web Development" book
 #
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
@@ -69,5 +70,4 @@ def contactme() :
 # Run the app!
 #
 if __name__ == '__main__' :
-   print( 'debug_mode:', debug_mode )
-   app.run( debug=debug_mode )
+   app.run()
