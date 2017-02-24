@@ -7,35 +7,42 @@
 {% endblock %}
 {% block content %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  <main class="jumbotron">
-    <div class="container">
-      <section id="intro">
-        <form>
-        	<div class="form-group"> <!-- Email field !-->
-        		<label for="email_id" class="control-label">Email</label>
-        		<input type="email" class="form-control" id="email_id" name="email_name" placeholder="name@domain.com">
-        	</div>
-        	<div class="form-group"> <!-- Submit button !-->
-        		<button type="submit" class="btn btn-primary">Submit</button>
-        	</div>
-        </form>
-      </section><!-- #intro -->
-      <p><a class="btn btn-primary btn-lg" href="yourportrait" role="button">Get your portrait &raquo;</a></p>
-    </div><!-- .container -->
-  </main><!-- .jumbotron -->
-
   <div class="container">
-    <form>
-    	<div class="form-group"> <!-- Email field !-->
-    		<label for="email_id" class="control-label">Email</label>
-    		<input type="email" class="form-control" id="email_id" name="email_name" placeholder="name@domain.com">
-    	</div>
-
-    	<div class="form-group"> <!-- Submit button !-->
-    		<button type="submit" class="btn btn-primary">Submit</button>
-    	</div>
-    </form>
+    <main class="jumbotron">
+      <div class="row">
+        <div class="col-md-8">
+          <section id="contactme">
+            <p>
+              Enter your email address below and we will contact you with
+                details about how you can get your personalized
+                Spiritual Portrait!
+            </p>
+          </section><!-- #intro -->
+          <section id="enter-email">
+            <form>
+              <div class="form-group"> <!-- Email field !-->
+                <label for="email_id" class="control-label">Email</label>
+                <input type="email" class="form-control" id="email_id"
+                       name="email_name" placeholder="name@domain.com">
+              </div>
+              <div class="form-group"> <!-- Submit button !-->
+                <button type="submit" class="btn btn-primary">Save Email</button>
+              </div>
+            </form>
+          </section><!-- #intro -->
+        </div><!-- col-md-8 -->
+        <div class="col-md-4">
+          <div class="sidebox">
+            <section id="manifesto">
+              <h3>Sidebox</h3>
+              <p>
+                Need something in this sidebox, for consistency with the other pages.</p>
+            </section><!-- #manifesto -->
+          </div><!-- .sidebox -->
+        </div><!-- .col-md-4 -->
+      </div><!-- row -->
+    </main><!-- .jumbotron -->
     {{ super() }}
-  </div> <!-- .container -->
+  </div><!-- .container -->
 
 {% endblock %}
