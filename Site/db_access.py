@@ -83,13 +83,13 @@ def see_data( rows, line_prefix="" ):
 #  Test our insert* Functions
 #  Usage:
 #     $ . ./env.sh
-#     $ python
+#     $ python3
 #     >>> from db_access import test_insert_functions
 #     >>> test_insert_functions()
 #  Or, use these commands to test on the command line:
 #     $ . ./env.sh
 #     $ python
-#     from db_access import insert_hard_coded_name_email
+#     >>> from db_access import insert_hard_coded_name_email
 #     >>> insert_hard_coded_name_email()
 #     >>> from db_access import insert_name_email
 #     >>> insert_name_email( 'june', 'june@may.com' )
