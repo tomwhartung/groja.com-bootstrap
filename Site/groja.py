@@ -1,34 +1,28 @@
 ##
-# Link routes to their corresponding templates
-# --------------------------------------------
-# This is mostly a static site so there's not much here
-#
+# groja.py: main application source for groja.com
+# --------------------------------------------------
+# Purpose: link routes to their corresponding templates
 # Reference: Chapter 3 of the "Flask Web Development" book
 #
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from flask import redirect, render_template, request, session, url_for
+from form import NameEmailForm
+from db_access import insert_name_email
 
 app = Flask( __name__ )
 
 ##
 # Load the configuration settings
 #
+print( 'TEMPLATES_AUTO_RELOAD 0: ', app.config['TEMPLATES_AUTO_RELOAD'] )
 from config import *
 app.config.from_object('config.Config')
-
 print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
-import socket
-hostname = socket.gethostname()
 
-if hostname == 'jane':
-   app.config.from_object('config.DevelopmentConfig')
-else:
-   app.config.from_object('config.ProductionConfig')
-
-print( 'TEMPLATES_AUTO_RELOAD 2: ', app.config['TEMPLATES_AUTO_RELOAD'] )
-
-## app.config.from_envvar('YOURAPPLICATION_SETTINGS')
-
+##
+#  Bootstrap the app
+#
 Bootstrap( app )
 
 ##
