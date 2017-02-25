@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Thanks!{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="page-header">
+      <h3>Thanks
+        {% if name %}
+          {{ name }}!
+        {% else %}
+          Friend!
+        {% endif %}</h3>
+    </div><!-- .page-header -->
+    {{ super() }}
+  </div><!-- .container -->
+{% endblock %}
