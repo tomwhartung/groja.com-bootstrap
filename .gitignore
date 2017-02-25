@@ -1,10 +1,11 @@
 #
-# Documentation is here: http://git-scm.com/docs/gitignore
+#  Documentation is here: http://git-scm.com/docs/gitignore
+#  --------------------------------------------------------
 #
 tmp/
 
 #
-# Ignore netbeans work area and vim temporary files
+#  Ignore netbeans work area and vim temporary files
 #
 /nbproject/
 *.swp
@@ -12,6 +13,17 @@ tmp/
 .*~
 *~
 
+#
+#  Put files we do not want to commit to github in our gitignored directory, and
+#  link them back into the site code (it's ok to check in the links).
+#
+/gitignored/
+
+################################################################################
+#
+#  The following entries are from github's .gitignore file for python:
+#
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -101,4 +113,3 @@ ENV/
 
 # Rope project settings
 .ropeproject
-/nbproject/private/
