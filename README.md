@@ -93,6 +93,8 @@ Hopefully there's no error, else see references above (in the always_learning_py
 
 **We are doing super-basic stuff at this time, so do not worry about versions.**
 
+##### Step (2a) Install flask-bootstrap
+
 If flask-bootstrap is not installed globally, here's how to fix that:
 
 As root:
@@ -100,6 +102,17 @@ As root:
 ```
 (sudo su -)
 pip3 install flask-bootstrap
+```
+
+##### Step (2b) Install flask-wtf
+
+If flask-wtf is not installed globally, here's how to fix that:
+
+As root:
+
+```
+(sudo su -)
+pip3 install flask-wtf
 ```
 
 #### Step (3) Running hello.py and groja.py locally
