@@ -8,7 +8,7 @@ from flask import Flask, flash
 from flask_bootstrap import Bootstrap
 from flask import redirect, render_template, request, session, url_for
 from form import NameEmailForm
-from db_access import insert_name_email
+from db_access import update_or_insert_name_email
 from send_email import send_interest_email
 
 app = Flask( __name__ )
@@ -74,7 +74,7 @@ def contactme():
       if form.validate():
          session['name'] = name
          session['email'] = email
-         insert_name_email( name, email, portrait=1 )
+         update_or_insert_name_email( name, email, portrait=1 )
          flash( 'Thanks, we will be in touch with you soon!' )
          return redirect( url_for('thanks') )
       else:
