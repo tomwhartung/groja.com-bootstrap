@@ -9,6 +9,7 @@ from flask_bootstrap import Bootstrap
 from flask import redirect, render_template, request, session, url_for
 from form import NameEmailForm
 from db_access import insert_name_email
+from send_email import send_interest_email
 
 app = Flask( __name__ )
 
@@ -19,6 +20,11 @@ print( 'TEMPLATES_AUTO_RELOAD 0: ', app.config['TEMPLATES_AUTO_RELOAD'] )
 from config import *
 app.config.from_object('config.Config')
 print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
+
+GROJA_MAIL_FROM = app.config['GROJA_MAIL_FROM']
+GROJA_MAIL_TO = app.config['GROJA_MAIL_TO']
+print( 'GROJA_MAIL_FROM: ', app.config['GROJA_MAIL_FROM'] )
+print( 'GROJA_MAIL_TO: ', app.config['GROJA_MAIL_TO'] )
 
 ##
 #  Bootstrap the app
@@ -63,10 +69,11 @@ def contactme():
    if request.method == 'POST':
       name = form.name.data
       email = form.email.data
-      print( "name: ", name, "email: ", email )
+      print( "In contactme, name: ", name, "email: ", email )
 
       if form.validate():
          session['name'] = name
+         session['email'] = email
          insert_name_email( name, email, portrait=1 )
          flash( 'Thanks, we will be in touch with you soon!' )
          return redirect( url_for('thanks') )
@@ -90,6 +97,9 @@ def contactme():
 @app.route( "/thanks" )
 def thanks():
    name = session.get( 'name' )
+   email = session.get( 'email' )
+   print( "In thanks, name: ", name, "email: ", email )
+   send_interest_email( name + ' (' + email + ') has expressed an interest in buying a spiritual portrait!' )
    return render_template( 'thanks.html', name=name )
 
 ##
