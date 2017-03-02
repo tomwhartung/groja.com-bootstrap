@@ -21,10 +21,14 @@ from config import *
 app.config.from_object('config.Config')
 print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
 
-GROJA_MAIL_FROM = app.config['GROJA_MAIL_FROM']
-GROJA_MAIL_TO = app.config['GROJA_MAIL_TO']
-print( 'GROJA_MAIL_FROM: ', app.config['GROJA_MAIL_FROM'] )
-print( 'GROJA_MAIL_TO: ', app.config['GROJA_MAIL_TO'] )
+#
+# Decided to keep these as environment variables instead of in the config
+# Leaving these here for now, in case we change our minds....
+#
+## GROJA_MAIL_FROM = app.config['GROJA_MAIL_FROM']
+## GROJA_MAIL_TO = app.config['GROJA_MAIL_TO']
+## print( 'GROJA_MAIL_FROM: ', app.config['GROJA_MAIL_FROM'] )
+## print( 'GROJA_MAIL_TO: ', app.config['GROJA_MAIL_TO'] )
 
 ##
 #  Bootstrap the app
