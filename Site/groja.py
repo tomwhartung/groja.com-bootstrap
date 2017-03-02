@@ -16,10 +16,10 @@ app = Flask( __name__ )
 ##
 # Load the configuration settings
 #
-print( 'TEMPLATES_AUTO_RELOAD 0: ', app.config['TEMPLATES_AUTO_RELOAD'] )
+## print( 'TEMPLATES_AUTO_RELOAD 0: ', app.config['TEMPLATES_AUTO_RELOAD'] )
 from config import *
 app.config.from_object('config.Config')
-print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
+## print( 'TEMPLATES_AUTO_RELOAD 1: ', app.config['TEMPLATES_AUTO_RELOAD'] )
 
 #
 # Decided to keep these as environment variables instead of in the config
