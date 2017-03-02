@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block head %}
-   {{ super() }}
-   <style>
-   </style>
+  {{ super() }}
+  <style>
+  </style>
 {% endblock %}
 {% block content %}
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <main class="jumbotron">
-    <div class="container">
-      <h2>Welcome to the <span class="air-quotes">Spiritual Portrait</span> Site</h2>
-      <div class="row">
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+ <div class="container">
+  <div class="row">
         <div class="col-md-8">
+    <main class="jumbotron">
+      <h2>Welcome to the <span class="air-quotes">Spiritual Portrait</span> Site</h2>
           <p>
             The abstract images on this site are called
               <span class="air-quotes">GROJAS</span> or
@@ -54,11 +54,9 @@
         </div><!-- .sidebox -->
       </div><!-- .col-md-4 -->
   </div><!-- .row -->
-    </div><!-- .container -->
   </main><!-- .jumbotron -->
 
-  <div class="container">
-    <div class="row">
+  <div class="row">
       <div class="col-md-4">
         <h2>About</h2>
         <p>
@@ -84,9 +82,9 @@
         <p><a class="btn btn-default" href="galleries" role="button">
           View Galleries &raquo;</a></p>
       </div>
-    </div><!-- .row -->
-    <hr />
-    <div class="row">
+  </div><!-- .row -->
+  <hr />
+  <div class="row">
       <div class="col-md-8">
         <a name="can-we-talk"></a>
         <h3><span class="air-quotes">Can we talk?</span></h3>
@@ -114,8 +112,8 @@
           My wish is to honor, carry on, and build on the work of my predecessors without
             stepping on any toes, legal or otherwise.</p>
       </div><!-- .col-md-8 -->
-    </div><!-- .row -->
-    {{ super() }}
-  </div> <!-- .container -->
+  </div><!-- .row -->
+  {{ super() }}
+ </div> <!-- .container -->
 
 {% endblock %}
