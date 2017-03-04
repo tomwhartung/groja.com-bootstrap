@@ -6,15 +6,19 @@
    </style>
 {% endblock %}
 {% block content %}
-  <div class="container">
-    <div class="page-header">
-      <h3>Thanks
-        {% if name %}
-          {{ name }}!
-        {% else %}
-          Friend!
-        {% endif %}</h3>
-    </div><!-- .page-header -->
-    {{ super() }}
-  </div><!-- .container -->
+<main>
+ <div class="container">
+  <div class="row">
+   <div class="col-md-8">
+    <h3>Thanks
+      {% if name %}
+        {{ name }}!
+      {% else %}
+        Friend!
+      {% endif %}</h3>
+   </div><!-- .col-md-8 -->
+  </div><!-- .row -->
+  {{ super() }}
+ </div><!-- .container -->
+<main>
 {% endblock %}
