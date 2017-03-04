@@ -25,8 +25,8 @@ def send_interest_email( message_text ):
    msg['Subject'] = 'Test Email (Subject)'
    msg['From'] = GROJA_MAIL_FROM
    msg['To'] = GROJA_MAIL_TO
-   server = smtplib.SMTP('localhost')
-   server.send_message(msg)
-   server.quit()
+   ## server = smtplib.SMTP('localhost')
+   ## server.send_message(msg)
+   ## server.quit()
    print( 'Message sent!' )
    return True
