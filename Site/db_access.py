@@ -6,9 +6,7 @@
 #
 import sqlite3
 import datetime
-
-DB_DIRECTORY = '../db/'
-NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
+from db_create import NAME_EMAIL_TABLE
 
 ################################################################################
 #
@@ -20,6 +18,7 @@ NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
 #  Update an old or insert a new row into the table, as appropriate
 #
 def update_or_insert_name_email( name, email, id=0, consulting=-1, newsletter=-1, portrait=-1 ):
+   ## print( 'In update_or_insert_name_email and NAME_EMAIL_TABLE =', NAME_EMAIL_TABLE )
    if id == 0:
       result = email_already_in_db( email )
       if result:
