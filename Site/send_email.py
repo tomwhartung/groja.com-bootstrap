@@ -9,7 +9,6 @@ from email.mime.text import MIMEText
 import os
 GROJA_MAIL_FROM = os.environ.get( 'GROJA_MAIL_FROM' )
 GROJA_MAIL_TO = os.environ.get( 'GROJA_MAIL_TO' )
-## from groja import GROJA_MAIL_FROM, GROJA_MAIL_TO
 
 ##
 #  Send an email getting the TO and FROM values from environment variables
@@ -25,8 +24,8 @@ def send_interest_email( message_text ):
    msg['Subject'] = 'Test Email (Subject)'
    msg['From'] = GROJA_MAIL_FROM
    msg['To'] = GROJA_MAIL_TO
-   ## server = smtplib.SMTP('localhost')
-   ## server.send_message(msg)
-   ## server.quit()
+   server = smtplib.SMTP('localhost')
+   server.send_message(msg)
+   server.quit()
    print( 'Message sent!' )
    return True
