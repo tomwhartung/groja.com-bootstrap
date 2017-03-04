@@ -5,9 +5,9 @@
 #     http://flask.pocoo.org/docs/0.12/patterns/sqlite3/
 #
 import sqlite3
-DB_DIRECTORY = '../db/'
+## DB_DIRECTORY = '../db/'
+DB_DIRECTORY = '/var/www/groja.com/htdocs/groja.com/db/'
 NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
-from db_access import print_table
 
 #
 #  Note: we know, this file has no routes!
