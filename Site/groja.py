@@ -73,7 +73,7 @@ def contactme():
    if request.method == 'POST':
       name = form.name.data
       email = form.email.data
-      print( "In contactme, name: ", name, "email: ", email )
+      ## print( "In contactme, name: ", name, "email: ", email )
 
       if form.validate():
          session['name'] = name
@@ -102,7 +102,7 @@ def contactme():
 def thanks():
    name = session.get( 'name' )
    email = session.get( 'email' )
-   print( "In thanks, name: ", name, "email: ", email )
+   ## print( "In thanks, name: ", name, "email: ", email )
    send_interest_email( name + ' (' + email + ') has expressed an interest in buying a spiritual portrait!' )
    return render_template( 'thanks.html', name=name )
 
