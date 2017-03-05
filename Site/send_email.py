@@ -6,6 +6,9 @@
 import smtplib
 from email.mime.text import MIMEText
 
+#
+#  Set environment variables in /etc/apache2/envvars
+#
 import os
 GROJA_MAIL_FROM = os.environ.get( 'GROJA_MAIL_FROM' )
 GROJA_MAIL_TO = os.environ.get( 'GROJA_MAIL_TO' )
@@ -27,5 +30,5 @@ def send_interest_email( message_text ):
    server = smtplib.SMTP('localhost')
    server.send_message(msg)
    server.quit()
-   print( 'Message sent!' )
+   ## print( 'Message sent!' )
    return True
