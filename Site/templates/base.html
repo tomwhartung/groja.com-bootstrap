@@ -74,15 +74,35 @@
     </nav>
   {% endblock %}
 
-  {% block content %}
-    <hr>
-    <footer>
-      Copyright &copy; 2016
-      <a href="http://www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
-      and
-      <a href="http://www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
-      All Rights Reserved.
-    </footer>
+  {% block container %}
+   <main>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-8">
+       {% block content %}
+       {% endblock %}
+      </div><!-- .col-md-8 -->
+      <div class="col-md-4">
+       {% block sidebox %}
+       {% endblock %}
+      </div><!-- .col-md-4 -->
+     </div><!-- .row -->
+      {% block remainder %}
+      {% endblock %}
+     <div class="row">
+     </div><!-- .row -->
+     {% block footer %}
+      <hr>
+      <footer>
+       Copyright &copy; 2016
+       <a href="http://www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
+       and
+       <a href="http://www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
+       All Rights Reserved.
+      </footer>
+     {% endblock %}
+    </div><!-- .container -->
+   <main>
   {% endblock %}
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
