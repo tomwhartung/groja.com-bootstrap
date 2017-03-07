@@ -5,13 +5,10 @@
   <style>
   </style>
 {% endblock %}
-{% block content %}
- <!-- Main jumbotron for a primary marketing message or call to action -->
- <main>
-  <div class="container">
-   <div class="row">
-    <div class="col-md-8">
-     <article class="jumbotron">
+{% block container %}
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  {% block content %}
+    <article class="jumbotron">
       <section id="spiritual-portrait-site">
        <h2>Groja.com: The <span class="air-quotes">Spiritual Portrait</span> Site</h2>
        <p>
@@ -30,8 +27,8 @@
        <p>
         &sup1; GROJA stands for Graphical Representations of Jungian Archetypes.</p>
       </section><!-- #spiritual-portrait-site -->
-     </article><!-- .jumbotron -->
-     <article id="learn-more">
+    </article><!-- .jumbotron -->
+    <article id="learn-more">
       <h3>Want to learn more?</h3>
       <p>
        Use the links below to explore this site and check out the
@@ -40,10 +37,10 @@
         at
         <a href="http://www.seeourminds.com"
            title="Link to the home page at SeeOurMinds.com" target="_blank">SeeOurMinds.com</a>.</p>
-     </article><!-- #learn-more -->
-    </div><!-- .col-md-8 -->
-    <div class="col-md-4">
-     <section id="testimonial">
+    </article><!-- #learn-more -->
+  {% endblock %}
+  {% block sidebox %}
+    <section id="testimonial">
       <div class="sidebox">
        <figure>
         <img src="{{ url_for('static', filename='images/site/infp-tomh_1987-scaled_200x200.gif') }}" class="sidebox-img">
@@ -55,10 +52,10 @@
             life-altering.</a>
         I would like to help you on a similar journey of greater self-awareness!</p>
       </div><!-- .sidebox -->
-     </section><!-- #testimonial -->
-    </div><!-- .col-md-4 -->
-   </div><!-- .row -->
+    </section><!-- #testimonial -->
+  {% endblock %}
 
+  {% block remainder %}
    <div class="row">
     <div class="col-md-4">
      <h2>About</h2>
@@ -120,8 +117,8 @@
             stepping on any toes, legal or otherwise.</p>
     </div><!-- .col-md-8 -->
    </div><!-- .row -->
+  {% endblock %}
+  {% block footer %}
    {{ super() }}
-  </div> <!-- .container -->
- </main>
-
+  {% endblock %}
 {% endblock %}
