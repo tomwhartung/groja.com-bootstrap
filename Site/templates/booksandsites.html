@@ -6,11 +6,7 @@
   </style>
 {% endblock %}
 
-{% block content %}
- <main>
-  <div class="container">
-   <div class="row">
-    <div class="col-md-8">
+{% block toprowcontent %}
      <section id="books-and-sites">
       <h1>Books and Sites</h1>
       <p>
@@ -164,12 +160,12 @@
        </dd>
        <dt>
         <a href="http://www.myersbriggs.org/"
-           title="Myers & Briggs Foundation home page" target="_blank">Myers & Briggs Foundation</a>
+           title="Myers and Briggs Foundation home page" target="_blank">Myers and Briggs Foundation</a>
        </dt>
        <dd>
         Keeping the spirit of Isabel Briggs Meyers alive, the
          <a href="http://www.myersbriggs.org/"
-            title="Myers & Briggs Foundation home page" target="_blank">Myers & Briggs Foundation</a>
+            title="Myers and Briggs Foundation home page" target="_blank">Myers and Briggs Foundation</a>
          site is full of resources, including information about taking the
          <a href="http://www.myersbriggs.org/my-mbti-personality-type/take-the-mbti-instrument/"
             title="Page about how to take the MBTI &reg; instrument" target="_blank">
@@ -212,16 +208,11 @@
          <a href="http://www.seeourminds.com/quiz"
             title="seeourminds.com home page" target="_blank">Groja &copy; Quiz</a>.
        </dd>
-       <dt>
-        <a href="" title=" home page" target="_blank"> </a>
-        <a href="" title=" home page" target="_blank"> </a>
-       </dt>
-       <dd>
-       </dd>
       </dl>
      </section><!-- #sites -->
-    </div><!-- .col-md-8 -->
-    <div class="col-md-4">
+{% endblock %}
+{% block toprowsidebox %}
+     {{ super() }}
      <section id="jungs-book">
       <div class="sidebox">
        <h3>Jungian Archetypes</h3>
@@ -243,11 +234,4 @@
         I recommend you pick up a copy of Isabel Myers-Briggs or David Keirsey's book instead</p>
       </div><!-- .sidebox -->
      </section><!-- #jungs-book -->
-    </div><!-- .col-md-4 -->
-   </div><!-- .row -->
-
-   {{ super() }}
-
-  </div><!-- .container -->
- </main>
 {% endblock %}
