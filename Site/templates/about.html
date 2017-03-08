@@ -7,11 +7,7 @@
   </style>
 {% endblock %}
 
-{% block content %}
- <main>
-  <div class="container">
-   <div class="row">
-    <div class="col-md-8">
+{% block toprowcontent %}
      <section id="about">
       <h1>About Spiritual Portraits</h1>
       <p>
@@ -82,9 +78,9 @@
        It is amazing &mdash; but not entirely surprising &mdash; to learn that he lived
         much of his life in poverty.</p>
      </section><!-- #art-history-class -->
-    </div><!-- .col-md-8 -->
-    <div class="col-md-4">
-     <div class="sidebox">
+{% endblock %}
+{% block toprowsidebox %}
+      {{ super() }}
       <section id="manifesto">
        <h3>Manifesto: A Statement of Purpose</h3>
        <p>
@@ -103,10 +99,9 @@
        <p>
         See, it's really not that complicated after all!</p>
       </section><!-- #manifesto -->
-     </div><!-- .sidebox -->
-    </div><!-- .col-md-4 -->
-   </div><!-- .row -->
+{% endblock %}
 
+{% block remainder %}
    <div class="row">
     <div class="col-md-12">
      <section id="versions">
@@ -148,9 +143,4 @@
      </section><!-- #versions -->
     </div><!-- .col-md-12 -->
    </div><!-- .row -->
-
-   {{ super() }}
-
-  </div> <!-- .container -->
- </main>
 {% endblock %}
