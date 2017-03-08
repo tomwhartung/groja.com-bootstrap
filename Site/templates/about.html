@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block title %}About{% endblock %}
-
 {% block head %}
   {{ super() }}
   <style>
@@ -80,25 +79,27 @@
      </section><!-- #art-history-class -->
 {% endblock %}
 {% block toprowsidebox %}
-      {{ super() }}
-      <section id="manifesto">
-       <h3>Manifesto: A Statement of Purpose</h3>
-       <p>
-        Does this seem complicated?</p>
-       <p>
-        Is it at all obvious that this idea's roots are in abstract paintings done close to a hundred years ago?
-        I hope so, but if not, let's clear something up right now.</p>
-       <p>
-        At its core, the purpose of this idea is two-fold:</p>
-       <ul class="standalone">
-        <li>
-         To enable us to see the invisible</li>
-        <li>
-         To promote harmony between opposites</li>
-       </ul>
-       <p>
-        See, it's really not that complicated after all!</p>
-      </section><!-- #manifesto -->
+  {{ super() }}
+  <section id="manifesto">
+    <div class="sidebox">
+    <h3>Manifesto: A Statement of Purpose</h3>
+    <p>
+     Does this seem complicated?</p>
+    <p>
+     Is it at all obvious that this idea's roots are in abstract paintings done close to a hundred years ago?
+     I hope so, but if not, let's clear something up right now.</p>
+    <p>
+     At its core, the purpose of this idea is two-fold:</p>
+    <ul class="standalone">
+     <li>
+      To enable us to see the invisible</li>
+     <li>
+      To promote harmony between opposites</li>
+    </ul>
+    <p>
+     See, it's really not that complicated after all!</p>
+    </div><!-- .sidebox -->
+  </section><!-- #manifesto -->
 {% endblock %}
 
 {% block remainder %}
