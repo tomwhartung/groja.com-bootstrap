@@ -5,44 +5,45 @@
    <style>
    </style>
 {% endblock %}
-{% block content %}
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="container">
-    <main class="jumbotron">
-      <div class="row">
-        <div class="col-md-8">
-          <section id="contactme">
-            <p>
-              Enter your email address below and we will contact you with
-                details about how you can get your personalized
-                Spiritual Portrait!
-            </p>
-          </section><!-- #intro -->
-          <section id="enter-email">
-            <form  action="" method="post" role="form">
-              {{ form.hidden_tag() }}
-              <div class="form-group">
-                <label for="name">{{ form.name.label }}</label>
-                {{ form.name( class="form-control", value=form.name.data ) }}
-                <label for="email">{{ form.email.label }}</label>
-                {{ form.email( class="form-control", value=form.email.data ) }}
-              </div>
-              <button type="submit" class="btn btn-success">Sign Up</button>
-            </form>
-          </section><!-- #intro -->
-        </div><!-- col-md-8 -->
-        <div class="col-md-4">
-          <div class="sidebox">
-            <section id="manifesto">
-              <h3>Sidebox</h3>
-              <p>
-                Need something in this sidebox, for consistency with the other pages.</p>
-            </section><!-- #manifesto -->
-          </div><!-- .sidebox -->
-        </div><!-- .col-md-4 -->
-      </div><!-- row -->
-    </main><!-- .jumbotron -->
-    {{ super() }}
-  </div><!-- .container -->
 
+{% block toprowcontent %}
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <article class="jumbotron">
+    <section id="contactme">
+      <p>
+        Enter your email address below and we will contact you with
+         details about how you can get your personalized
+         Spiritual Portrait!
+      </p>
+    </section><!-- #intro -->
+    <section id="enter-email">
+      <form  action="" method="post" role="form">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          <label for="name">{{ form.name.label }}</label>
+          {{ form.name( class="form-control", value=form.name.data ) }}
+          <label for="email">{{ form.email.label }}</label>
+          {{ form.email( class="form-control", value=form.email.data ) }}
+        </div>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </form>
+    </section><!-- #intro -->
+  </article>
+{% endblock %}
+{% block toprowsidebox %}
+  {{ super() }}
+  <div class="process">
+    <section id="manifesto">
+      <h3>Process</h3>
+      <p>
+        Here is the process.</p>
+      <ol>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+      </ol>
+      <p>
+        Thanks for your cooperation!</p>
+    </section><!-- #manifesto -->
+  </div><!-- .sidebox -->
 {% endblock %}
