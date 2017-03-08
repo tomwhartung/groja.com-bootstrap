@@ -6,11 +6,7 @@
     </style>
 {% endblock %}
 
-{% block content %}
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
+{% block toprowcontent %}
           <section class="jumbotron" id="your-portrait">
             <h2>Your Portrait</h2>
             <p>
@@ -65,8 +61,9 @@
             <p>
               Thanks, and <span class="emphasized">have a great day!</span></p>
           </section><!-- #personalized-portraits -->
-        </div><!-- .col-md-8 -->
-        <div class="col-md-4">
+{% endblock %}
+{% block toprowsidebox %}
+  {{ super() }}
           <section id="cost">
             <div class="sidebox">
               <h3>How Much?</h3>
@@ -106,9 +103,9 @@
                   Factors Affecting the Cost</a>
               section.</p>
           </section><!-- #cost -->
-        </div><!-- .col-md-4 -->
-      </div><!-- .row -->
+{% endblock %}
 
+{% block remainder %}
       <div class="row">
         <div class="col-md-12">
           <section id="factors-affecting-cost">
@@ -167,11 +164,4 @@
               highly personal Spiritual Portrait &mdash; one that you can fully appreciate and enjoy now and for years to come!
               </p>
           </section><!-- #factors-affecting-cost -->
-        </div><!-- .col-md-12 -->
-      </div><!-- .row -->
-
-    {{ super() }}
-
-    </div><!-- .container -->
-  </main>
 {% endblock %}
