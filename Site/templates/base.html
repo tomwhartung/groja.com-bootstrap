@@ -74,33 +74,41 @@
     </nav>
   {% endblock %}
 
-  {% block container %}
+{% block content %}
+  {% block containeropen %}
    <main>
     <div class="container">
+  {% endblock %}
+  {% block toprowopen %}
      <div class="row">
       <div class="col-md-8">
-       {% block content %}
-       {% endblock %}
+  {% endblock %}
+  {% block toprowcontent %}
+  {% endblock %}
+  {% block toprowcolsplit %}
       </div><!-- .col-md-8 -->
       <div class="col-md-4">
-       {% block sidebox %}
-       {% endblock %}
+  {% endblock %}
+  {% block toprowsidebox %}
+      <h3>Social Media Icons Here</h3>
+  {% endblock %}
+  {% block toprowclose %}
       </div><!-- .col-md-4 -->
      </div><!-- .row -->
-      {% block remainder %}
-      {% endblock %}
-     <div class="row">
-     </div><!-- .row -->
-     {% block footer %}
-      <hr>
-      <footer>
+  {% endblock %}
+  {% block remainder %}
+  {% endblock %}
+  {% block footer %}
+     <hr>
+     <footer>
        Copyright &copy; 2016
        <a href="http://www.TomWHartung.com" target="_blank" title"TomWHartung.com home page">Tom W. Hartung</a>
        and
        <a href="http://www.joomoowebsites.com" target="_blank" title"JooMooWebSites.com home page">JooMooWebSites.com</a>.
        All Rights Reserved.
-      </footer>
-     {% endblock %}
+     </footer>
+  {% endblock %}
+  {% block containerclose %}
     </div><!-- .container -->
    <main>
   {% endblock %}
@@ -108,6 +116,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
 
 </body>
 </html>
