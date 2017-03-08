@@ -5,20 +5,15 @@
    <style>
    </style>
 {% endblock %}
-{% block content %}
-<main>
- <div class="container">
-  <div class="row">
-   <div class="col-md-8">
-    <h3>Thanks
-      {% if name %}
-        {{ name }}!
-      {% else %}
-        Friend!
-      {% endif %}</h3>
-   </div><!-- .col-md-8 -->
-  </div><!-- .row -->
+
+{% block toprowcontent %}
+  <h3>Thanks
+    {% if name %}
+      {{ name }}!
+    {% else %}
+      Friend!
+    {% endif %}</h3>
+{% endblock %}
+{% block toprowsidebox %}
   {{ super() }}
- </div><!-- .container -->
-<main>
 {% endblock %}
