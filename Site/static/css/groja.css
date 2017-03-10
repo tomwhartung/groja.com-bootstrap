@@ -14,11 +14,11 @@
  *    http://ksloan.net/css-color-definitions-for-font-awesome-social-icons/
  *    http://www.kodingmadesimple.com/2014/11/create-stylish-bootstrap-3-social-media-icons.html
  */
-i.fa-2x {
+i.fa-3x {
    margin: 3px;
 }
-i.fa-2x:hover {
-  font-size: 2.5em;
+i.fa-3x:hover {
+  font-size: 3.5em;
   margin: 0px;
   text-shadow: 4px 4px lightgrey;
 }
