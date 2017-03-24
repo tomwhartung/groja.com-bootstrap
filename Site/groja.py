@@ -4,6 +4,7 @@ Purpose: link routes to their corresponding templates
 Reference: Chapter 3 of the "Flask Web Development" book
 """
 
+from config import *
 from flask import Flask, flash
 from flask import redirect, render_template, request, session, url_for
 from flask_bootstrap import Bootstrap
@@ -14,21 +15,10 @@ from send_email import send_interest_email
 app = Flask(__name__)
 
 #
-# Load the configuration settings
+# Load the configuration settings and Bootstrap the app
 #
-from config import *
 app.config.from_object('config.Config')
-
-#
-# Decided to keep these as environment variables instead of in the config
-# Leaving these here for now, in case we change our minds....
-#
-## GROJA_MAIL_FROM = app.config['GROJA_MAIL_FROM']
-## GROJA_MAIL_TO = app.config['GROJA_MAIL_TO']
-## print('GROJA_MAIL_FROM: ', app.config['GROJA_MAIL_FROM'])
-## print('GROJA_MAIL_TO: ', app.config['GROJA_MAIL_TO'])
-
-Bootstrap(app)      # Bootstrap the app
+Bootstrap(app)
 
 
 @app.route('/')
@@ -46,15 +36,19 @@ def about():
 @app.route('/booksandsites')
 def booksandsites():
     """Show the Books and Sites page"""
-    return render_template('booksandsites.html',
-                            booksandsitesSelected='selected')
+    return render_template(
+            'booksandsites.html',
+            booksandsitesSelected='selected'
+    )
 
 
 @app.route('/yourportrait')
 def yourportrait():
     """Show the Your Portrait page"""
-    return render_template('yourportrait.html',
-                            yourportraitSelected='selected')
+    return render_template(
+            'yourportrait.html',
+            yourportraitSelected='selected'
+    )
 
 
 @app.route("/contactme", methods=['GET', 'POST'])
@@ -65,7 +59,7 @@ def contactme():
     if request.method == 'POST':
         name = form.name.data
         email = form.email.data
-        ## print("In contactme, name: ", name, "email: ", email)
+        # print("In contactme, name: ", name, "email: ", email)
 
         if form.validate():
             session['name'] = name
@@ -74,9 +68,9 @@ def contactme():
             flash('Thanks, we will be in touch with you soon!')
             return redirect(url_for('thanks'))
         else:
-            ## print("form.errors:", form.errors)
+            # print("form.errors:", form.errors)
             #
-            #  key = 'email', values = [] (list of error messages)
+            # key = 'email', values = [] (list of error messages)
             #
             for key, value in form.errors.items():
                 for message in value:
@@ -93,9 +87,11 @@ def thanks():
     """Thank the visitor for sharing their email address"""
     name = session.get('name')
     email = session.get('email')
-    ## print("In thanks, name: ", name, "email: ", email)
-    send_interest_email(name + ' (' + email + ') ' + \
-            'has expressed an interest in buying a spiritual portrait!')
+    # print("In thanks, name: ", name, "email: ", email)
+    send_interest_email(
+            name + ' (' + email + ') ' +
+            'has expressed an interest in buying a spiritual portrait!'
+    )
     return render_template('thanks.html', name=name)
 
 # Run the app!
