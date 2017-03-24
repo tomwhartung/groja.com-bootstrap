@@ -3,9 +3,10 @@
 Purpose: link routes to their corresponding templates
 Reference: Chapter 3 of the "Flask Web Development" book
 """
+
 from flask import Flask, flash
-from flask_bootstrap import Bootstrap
 from flask import redirect, render_template, request, session, url_for
+from flask_bootstrap import Bootstrap
 from form import NameEmailForm
 from db_access import update_or_insert_name_email
 from send_email import send_interest_email
@@ -45,18 +46,20 @@ def about():
 @app.route('/booksandsites')
 def booksandsites():
     """Show the Books and Sites page"""
-    return render_template('booksandsites.html', booksandsitesSelected='selected')
+    return render_template('booksandsites.html',
+                            booksandsitesSelected='selected')
 
 
 @app.route('/yourportrait')
 def yourportrait():
     """Show the Your Portrait page"""
-    return render_template('yourportrait.html', yourportraitSelected='selected')
+    return render_template('yourportrait.html',
+                            yourportraitSelected='selected')
 
 
 @app.route("/contactme", methods=['GET', 'POST'])
 def contactme():
-    """Display contactme page with the form, and process it when it comes back"""
+    """Display contactme page with the form, and process it when it returns"""
     form = NameEmailForm(request.form)
 
     if request.method == 'POST':
@@ -91,7 +94,8 @@ def thanks():
     name = session.get('name')
     email = session.get('email')
     ## print("In thanks, name: ", name, "email: ", email)
-    send_interest_email(name + ' (' + email + ') has expressed an interest in buying a spiritual portrait!')
+    send_interest_email(name + ' (' + email + ') ' + \
+            'has expressed an interest in buying a spiritual portrait!')
     return render_template('thanks.html', name=name)
 
 # Run the app!
