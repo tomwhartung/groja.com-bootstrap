@@ -10,23 +10,23 @@ import datetime
 import sqlite3
 from db_create import NAME_EMAIL_TABLE
 
-#==============================================================================
+# =============================================================================
 #
-#  Database access functions
-#  -------------------------
+# Database access functions
+# -------------------------
 #
 def update_or_insert_name_email(
-          name, email, id=0, consulting=-1, newsletter=-1, portrait=-1 ):
+          name, email, id=0, consulting=-1, newsletter=-1, portrait=-1):
 
     """ Update an old or insert a new row into the table, as appropriate """
 
-    # print( 'In update_or_insert_name_email and NAME_EMAIL_TABLE =', NAME_EMAIL_TABLE )
+    # print('In update_or_insert_name_email and NAME_EMAIL_TABLE =', NAME_EMAIL_TABLE)
     if id == 0:
-        result = email_already_in_db( email )
+        result = email_already_in_db(email)
         if result:
             id = result[0]
-            # print( 'Updating the email that is already in the db, id =', id )
-            with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+            # print('Updating the email that is already in the db, id =', id)
+            with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
                 query = 'UPDATE NameEmail SET name = "' + name + '"'
                 if consulting != -1:
                     query += ', consulting = ' + str(consulting)
@@ -36,7 +36,7 @@ def update_or_insert_name_email(
                     query += ', portrait = ' + str(portrait)
                 query += ' WHERE id = ' + str(id)
                 curs = connection.cursor()
-                curs.execute( query )
+                curs.execute(query)
         else:
             # default ("-1") means not specified means "0" when inserting
             if consulting == -1:
@@ -45,38 +45,38 @@ def update_or_insert_name_email(
                 newsletter = 0
             if portrait == -1:
                 portrait = 0
-            insert_name_email( name, email, consulting, newsletter, portrait )
+            insert_name_email(name, email, consulting, newsletter, portrait)
     else:
-        print( 'We got an id passed in, and we are not yet prepared to handle it:', id )
+        print('We got an id passed in, and we are not yet prepared to handle it:', id)
 
     return True
 
 
-def email_already_in_db( email ):
+def email_already_in_db(email):
 
     """ If email address is in db, return the row, else return False """
 
     result = False
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
         # query = 'SELECT * from NameEmail WHERE email = "' + email + "'"
         query = 'SELECT * from NameEmail WHERE email = "' + email + '"'
-        curs.execute( query )
+        curs.execute(query)
         row = curs.fetchone()
-        # print( 'in email_already_in_db, row:', row )
+        # print('in email_already_in_db, row:', row)
         result = row
     return result
 
 
-def insert_name_email( name, email, consulting=0, newsletter=0, portrait=0 ):
+def insert_name_email(name, email, consulting=0, newsletter=0, portrait=0):
 
     """ Insert a row into the table """
 
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
         curs.execute(
             "INSERT INTO NameEmail (name,email,consulting,newsletter,portrait) VALUES (?,?,?,?,?)",
-                ( name, email, consulting, newsletter, portrait ) )
+                (name, email, consulting, newsletter, portrait) )
     return True
 
 
@@ -87,24 +87,24 @@ def my_current_timestamp():
 
     my_time = datetime.time(1, 2, 3)
     my_date = datetime.date.today()
-    my_current_timestamp = datetime.datetime.combine( my_date, my_time )
+    my_current_timestamp = datetime.datetime.combine(my_date, my_time)
     return my_current_timestamp
 
 
-def print_table( line_prefix="" ):
+def print_table(line_prefix=""):
 
     """ Print all rows in the table to stdout """
 
     rows = get_data()
-    see_data( rows, line_prefix )
+    see_data(rows, line_prefix)
     return True
 
 
-#==============================================================================
+# =============================================================================
 #
-#   Functions for testing and development, etc.:
-#   --------------------------------------------
-#   All of this code is cruft and should be ignored and even deleted!
+# Functions for testing and development, etc.:
+# --------------------------------------------
+# All of this code is cruft and should be ignored and even deleted!
 #
 
 
@@ -112,11 +112,11 @@ def insert_hard_coded_name_email():
 
     """ Insert a row of hard-coded values into the table """
 
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
         curs.execute(
             "INSERT INTO NameEmail (name,email,date_added,date_changed) VALUES (?,?,?,?)",
-                ( 'Sam', 'sam@sam.com', my_current_timestamp(), my_current_timestamp() ) )
+                ('Sam', 'sam@sam.com', my_current_timestamp(), my_current_timestamp()) )
     return True
 
 
@@ -125,19 +125,19 @@ def get_data():
     """ Get the data """
 
     rows = []
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
-        curs.execute( 'SELECT * from NameEmail')
+        curs.execute('SELECT * from NameEmail')
         rows = curs.fetchall()
     return rows
 
 
-def see_data( rows, line_prefix="" ):
+def see_data(rows, line_prefix=""):
 
     """ Print the data """
 
     for row in rows:
-        print( line_prefix, "row:", row )
+        print(line_prefix, "row:", row)
     return True
 
 
@@ -155,31 +155,32 @@ def test_insert_functions():
         >>> from db_access import insert_hard_coded_name_email
         >>> insert_hard_coded_name_email()
         >>> from db_access import insert_name_email
-        >>> insert_name_email( 'june', 'june@may.com' )
-        >>> insert_name_email( 'april', 'april@may.com', portrait=1 )
-        >>> insert_name_email( 'pete', 'pete@example.com', consulting=1 )
-        >>> insert_name_email( 'mia', 'mia@example.com', newsletter=1 )
+        >>> insert_name_email('june', 'june@may.com')
+        >>> insert_name_email('april', 'april@may.com', portrait=1)
+        >>> insert_name_email('pete', 'pete@example.com', consulting=1)
+        >>> insert_name_email('mia', 'mia@example.com', newsletter=1)
     """
-    print_table( "1:" )
+    print_table("1:")
     insert_hard_coded_name_email()
-    print( '' )
-    print_table( "2:" )
-    insert_name_email( 'june', 'june@may.com' )
-    print( '' )
-    print_table( "3:" )
-    insert_name_email( 'april', 'april@may.com', portrait=1 )
-    print( '' )
-    print_table( "4:" )
-    insert_name_email( 'pete', 'pete@example.com', consulting=1 )
-    print( '' )
-    print_table( "5:" )
-    insert_name_email( 'mia', 'mia@example.com', newsletter=1 )
-    print( '' )
-    print_table( "6:" )
+    print('')
+    print_table("2:")
+    insert_name_email('june', 'june@may.com')
+    print('')
+    print_table("3:")
+    insert_name_email('april', 'april@may.com', portrait=1)
+    print('')
+    print_table("4:")
+    insert_name_email('pete', 'pete@example.com', consulting=1)
+    print('')
+    print_table("5:")
+    insert_name_email('mia', 'mia@example.com', newsletter=1)
+    print('')
+    print_table("6:")
 
-#==============================================================================
+# =============================================================================
 #
 # When run on the command line, we print the table
 #
 if __name__ == '__main__':
     print_table()
+
