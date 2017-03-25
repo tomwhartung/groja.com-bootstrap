@@ -13,17 +13,12 @@ Usage:
 """
 
 import sqlite3
-from flask import Flask
+from flask import Flask   # Note: this file has no routes (see comments below)
 
 DB_DIRECTORY = '/var/www/groja.com/htdocs/groja.com/db/'
 NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
 
-#
-#  Note: we know, this file has no routes!
-#  However, we import and declare app so we can use it to call open_resource
-#  (and maybe more later)
-#
-app = Flask(__name__)
+app = Flask(__name__)   # Declaring app so we can call open_resource
 
 # =============================================================================
 #
@@ -41,16 +36,13 @@ def drop_table():
     return True
 
 
-#  Reference: https://www.sqlite.org/datatype3.html
-#  Note: date_* columns are stored as integers:
-#     "INTEGER as Unix Time, the number of seconds since 1970-01-01 00:00:00 UTC"
-#
 def create_table():
 
-    """ Create the table and the database (if necessary) """
+    """ Read schema and create the database (if necessary) and table """
 
     with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
-        with app.open_resource(DB_DIRECTORY + 'NameEmailSchema.sql', mode='r') as nameEmailSchema:
+        schema = DB_DIRECTORY + 'NameEmailSchema.sql'
+        with app.open_resource(schema, mode='r') as nameEmailSchema:
             connection.executescript(nameEmailSchema.read())
             connection.commit()
     return True
