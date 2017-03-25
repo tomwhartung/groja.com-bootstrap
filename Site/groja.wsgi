@@ -17,5 +17,10 @@ Usage:
 import sys
 sys.path.insert(0, '/var/www/groja.com/htdocs/groja.com/Site')
 
-from groja import app as application
+#
+# Note:
+#   "noqa" lets PEP8 checkers know that we are doing something non-compliant
+#   We need to use it here because the app won't run unless we set the path!
+#
+from groja import app as application   # noqa (see comment above)
 
