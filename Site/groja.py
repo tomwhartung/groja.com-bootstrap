@@ -23,19 +23,19 @@ Bootstrap(app)
 
 @app.route('/')
 def home():
-    """Show the Home page"""
+    """ Show the Home page """
     return render_template('home.html', homeSelected='selected')
 
 
 @app.route('/about')
 def about():
-    """Show the About page"""
+    """ Show the About page """
     return render_template('about.html', aboutSelected='selected')
 
 
 @app.route('/booksandsites')
 def booksandsites():
-    """Show the Books and Sites page"""
+    """ Show the Books and Sites page """
     return render_template(
             'booksandsites.html',
             booksandsitesSelected='selected'
@@ -44,7 +44,7 @@ def booksandsites():
 
 @app.route('/yourportrait')
 def yourportrait():
-    """Show the Your Portrait page"""
+    """ Show the Your Portrait page """
     return render_template(
             'yourportrait.html',
             yourportraitSelected='selected'
@@ -53,7 +53,9 @@ def yourportrait():
 
 @app.route("/contactme", methods=['GET', 'POST'])
 def contactme():
-    """Display contactme page with the form, and process it when it returns"""
+
+    """ Display and process a contactme page that contains a form """
+
     form = NameEmailForm(request.form)
 
     if request.method == 'POST':
@@ -84,7 +86,9 @@ def contactme():
 
 @app.route("/thanks")
 def thanks():
-    """Thank the visitor for sharing their email address"""
+
+    """ Thank the visitor for sharing their email address """
+
     name = session.get('name')
     email = session.get('email')
     # print("In thanks, name: ", name, "email: ", email)
@@ -93,7 +97,8 @@ def thanks():
             'has expressed an interest in buying a spiritual portrait!'
     )
     return render_template('thanks.html', name=name)
-
+#
 # Run the app!
+#
 if __name__ == '__main__':
     app.run()
