@@ -14,13 +14,14 @@ from db_create import NAME_EMAIL_TABLE
 #
 # Database access functions
 # -------------------------
-#
+
+
 def update_or_insert_name_email(
           name, email, id=0, consulting=-1, newsletter=-1, portrait=-1):
 
     """ Update an old or insert a new row into the table, as appropriate """
 
-    # print('In update_or_insert_name_email and NAME_EMAIL_TABLE =', NAME_EMAIL_TABLE)
+    # print('update_or_insert_name_email NAME_EMAIL_TABLE =', NAME_EMAIL_TABLE)
     if id == 0:
         result = email_already_in_db(email)
         if result:
@@ -47,7 +48,7 @@ def update_or_insert_name_email(
                 portrait = 0
             insert_name_email(name, email, consulting, newsletter, portrait)
     else:
-        print('We got an id passed in, and we are not yet prepared to handle it:', id)
+        print('Current code unable to process passed-in id:', id)
 
     return True
 
@@ -75,8 +76,11 @@ def insert_name_email(name, email, consulting=0, newsletter=0, portrait=0):
     with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
         curs.execute(
-            "INSERT INTO NameEmail (name,email,consulting,newsletter,portrait) VALUES (?,?,?,?,?)",
-                (name, email, consulting, newsletter, portrait) )
+            "INSERT INTO NameEmail " +
+            "(name,email,consulting,newsletter,portrait) " +
+            "VALUES (?,?,?,?,?)",
+            (name, email, consulting, newsletter, portrait)
+        )
     return True
 
 
@@ -114,9 +118,13 @@ def insert_hard_coded_name_email():
 
     with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
+        my_ts = my_current_timestamp()
         curs.execute(
-            "INSERT INTO NameEmail (name,email,date_added,date_changed) VALUES (?,?,?,?)",
-                ('Sam', 'sam@sam.com', my_current_timestamp(), my_current_timestamp()) )
+            "INSERT INTO NameEmail " +
+            "(name,email,date_added,date_changed) " +
+            "VALUES (?,?,?,?)",
+            ('Sam', 'sam@sam.com', my_ts, my_ts)
+        )
     return True
 
 
@@ -183,4 +191,3 @@ def test_insert_functions():
 #
 if __name__ == '__main__':
     print_table()
-
