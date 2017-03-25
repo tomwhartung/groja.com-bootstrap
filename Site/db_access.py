@@ -91,6 +91,15 @@ def my_current_timestamp():
     return my_current_timestamp
 
 
+def print_table( line_prefix="" ):
+
+    """ Print all rows in the table to stdout """
+
+    rows = get_data()
+    see_data( rows, line_prefix )
+    return True
+
+
 #==============================================================================
 #
 #   Functions for testing and development, etc.:
@@ -110,18 +119,11 @@ def insert_hard_coded_name_email():
                 ( 'Sam', 'sam@sam.com', my_current_timestamp(), my_current_timestamp() ) )
     return True
 
-##
-#  Print all rows in the table to stdout
-#
-def print_table( line_prefix="" ):
-    rows = get_data()
-    see_data( rows, line_prefix )
-    return True
 
-##
-#  Get the data
-#
 def get_data():
+
+    """ Get the data """
+
     rows = []
     with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
         curs = connection.cursor()
@@ -129,33 +131,35 @@ def get_data():
         rows = curs.fetchall()
     return rows
 
-##
-#  Print the data
-#
+
 def see_data( rows, line_prefix="" ):
+
+    """ Print the data """
+
     for row in rows:
         print( line_prefix, "row:", row )
     return True
 
-##
-#  Test our insert* Functions
-#  Usage:
-#     $ . ./env.sh
-#     $ python3
-#     >>> from db_access import test_insert_functions
-#     >>> test_insert_functions()
-#  Or, use these commands to test on the command line:
-#     $ . ./env.sh
-#     $ python3
-#     >>> from db_access import insert_hard_coded_name_email
-#     >>> insert_hard_coded_name_email()
-#     >>> from db_access import insert_name_email
-#     >>> insert_name_email( 'june', 'june@may.com' )
-#     >>> insert_name_email( 'april', 'april@may.com', portrait=1 )
-#     >>> insert_name_email( 'pete', 'pete@example.com', consulting=1 )
-#     >>> insert_name_email( 'mia', 'mia@example.com', newsletter=1 )
-#
+
 def test_insert_functions():
+
+    """ Test our insert* Functions
+    Usage:
+        $ . ./env.sh
+        $ python3
+        >>> from db_access import test_insert_functions
+        >>> test_insert_functions()
+    Or, use these commands to test on the command line:
+        $ . ./env.sh
+        $ python3
+        >>> from db_access import insert_hard_coded_name_email
+        >>> insert_hard_coded_name_email()
+        >>> from db_access import insert_name_email
+        >>> insert_name_email( 'june', 'june@may.com' )
+        >>> insert_name_email( 'april', 'april@may.com', portrait=1 )
+        >>> insert_name_email( 'pete', 'pete@example.com', consulting=1 )
+        >>> insert_name_email( 'mia', 'mia@example.com', newsletter=1 )
+    """
     print_table( "1:" )
     insert_hard_coded_name_email()
     print( '' )
@@ -172,6 +176,8 @@ def test_insert_functions():
     insert_name_email( 'mia', 'mia@example.com', newsletter=1 )
     print( '' )
     print_table( "6:" )
+
+#==============================================================================
 #
 # When run on the command line, we print the table
 #
