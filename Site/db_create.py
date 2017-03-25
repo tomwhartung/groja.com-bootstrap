@@ -1,4 +1,4 @@
-""" Create a sqlite3 db for our NameEmail table
+""" Create a sqlite3 db for the NameEmail table
 
 Purpose: Create the db, create the table, seed in one row of data
 Author: Tom W. Hartung
@@ -13,6 +13,7 @@ Usage:
 """
 
 import sqlite3
+from flask import Flask
 
 DB_DIRECTORY = '/var/www/groja.com/htdocs/groja.com/db/'
 NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
@@ -22,7 +23,6 @@ NAME_EMAIL_TABLE = DB_DIRECTORY + 'NameEmail.db'
 #  However, we import and declare app so we can use it to call open_resource
 #  (and maybe more later)
 #
-from flask import Flask
 app = Flask(__name__)
 
 # =============================================================================
@@ -35,9 +35,9 @@ def drop_table():
 
     """ Drop the table exists (if it exists) """
 
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
-        curs.execute( 'DROP TABLE IF EXISTS NameEmail' )
+        curs.execute('DROP TABLE IF EXISTS NameEmail')
     return True
 
 
@@ -49,9 +49,9 @@ def create_table():
 
     """ Create the table and the database (if necessary) """
 
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
-        with app.open_resource( DB_DIRECTORY + 'NameEmailSchema.sql', mode='r' ) as nameEmailSchema:
-            connection.executescript( nameEmailSchema.read() )
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
+        with app.open_resource(DB_DIRECTORY + 'NameEmailSchema.sql', mode='r') as nameEmailSchema:
+            connection.executescript(nameEmailSchema.read())
             connection.commit()
     return True
 
@@ -60,11 +60,12 @@ def seed_table():
 
     """ Insert a row in the table, as a sanity check """
 
-    with sqlite3.connect( NAME_EMAIL_TABLE ) as connection:
+    with sqlite3.connect(NAME_EMAIL_TABLE) as connection:
         curs = connection.cursor()
         curs.execute(
             "INSERT INTO NameEmail (name,email) VALUES (?,?)",
-               ( 'Joe', 'joe@joe.com' ) )
+            ('Joe', 'joe@joe.com')
+        )
     return True
 
 # =============================================================================
@@ -72,6 +73,6 @@ def seed_table():
 # When run as a module, drop, create, and seed the table
 #
 if __name__ == '__main__':
-   drop_table()
-   create_table()
-   seed_table()
+    drop_table()
+    create_table()
+    seed_table()
