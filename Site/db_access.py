@@ -1,9 +1,15 @@
 """ db_access.py: Routines to support accessing the sqlite3 db
 
-Initial version: db contains a single table named NameEmail
-Default functionality: prints all rows (when run via python CLI)
+Purpose: create db containing a single table named NameEmail
+Author: Tom W. Hartung
+Date: Winter, 2017
+Copyright: (c) 2017 Tom W. Hartung, Groja.com, and JooMoo Websites LLC.
 Reference (for Flask DB patterns):
-    http://flask.pocoo.org/docs/0.12/patterns/sqlite3/
+  http://flask.pocoo.org/docs/0.12/patterns/sqlite3/
+Usage:
+  Print all rows in db
+    python3 -m db_access
+    bin/print.sh
 """
 
 import datetime
@@ -187,7 +193,7 @@ def test_insert_functions():
 
 # =============================================================================
 #
-# When run on the command line, we print the table
+# When run as a module, print the table
 #
 if __name__ == '__main__':
     print_table()
