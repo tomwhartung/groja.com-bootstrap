@@ -1,7 +1,11 @@
 """ groja.py: main application source for groja.com
 
 Purpose: link routes to their corresponding templates
-Reference: Chapter 3 of the "Flask Web Development" book
+Author: Tom W. Hartung
+Date: Winter, 2017
+Copyright: (c) 2017 Tom W. Hartung, Groja.com, and JooMoo Websites LLC.
+Reference:
+  Chapter 3 of the "Flask Web Development" book (M. Grinberg, 2014)
 """
 
 from config import *
@@ -20,6 +24,10 @@ app = Flask(__name__)
 app.config.from_object('config.Config')
 Bootstrap(app)
 
+# =============================================================================
+#
+# Routes and view functions
+# -------------------------
 
 @app.route('/')
 def home():
@@ -97,6 +105,8 @@ def thanks():
             'has expressed an interest in buying a spiritual portrait!'
     )
     return render_template('thanks.html', name=name)
+
+# =============================================================================
 #
 # Run the app!
 #
