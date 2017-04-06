@@ -53,11 +53,18 @@ ul.social-list,
 ul.old-school-list {
    list-style: none;
 }
-li.social-list:before,
-li.old-school-list:before {
-   content: '\021AA';   /* &rarrhk; */
-   padding: .3em;
-}
+/*
+ * These font-awesome-inspired bullets are interesting but
+ * I decided I hate them.  Keeping the code in comments here
+ * in case I change my mind or want to do something similar
+ * with another character or icon.
+ *
+ * li.social-list:before,
+ * li.old-school-list:before {
+ *    content: '\021AA';   /* &rarrhk; */
+ *    padding: .3em;
+ * }
+ */
 li.step-title {
    font-weight: bold;
    text-decoration: underline;
