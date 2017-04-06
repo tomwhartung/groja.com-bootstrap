@@ -47,11 +47,20 @@ i.fa-2x:hover {
 /*
  * For the Books and Sites Page:
  */
-.float-left {
-  float: left;
+img.book-cover-left,
+img.book-cover-right {
+  height: auto;
+  width: 90%;
 }
-.float-right {
+figure.book-cover-left {
+  margin: 1em;
+  float: left;
+  width: 25%;
+}
+figure.book-cover-right {
+  margin: 1em;
   float: right;
+  width: 25%;
 }
 /*
  * For the Contact Us page:
