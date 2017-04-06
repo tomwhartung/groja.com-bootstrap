@@ -59,17 +59,17 @@ def yourportrait():
     )
 
 
-@app.route("/contactme", methods=['GET', 'POST'])
-def contactme():
+@app.route("/contact", methods=['GET', 'POST'])
+def contact():
 
-    """ Display and process a contactme page that contains a form """
+    """ Display and process a contact page that contains a form """
 
     form = NameEmailForm(request.form)
 
     if request.method == 'POST':
         name = form.name.data
         email = form.email.data
-        # print("In contactme, name: ", name, "email: ", email)
+        # print("In contact, name: ", name, "email: ", email)
 
         if form.validate():
             session['name'] = name
@@ -89,7 +89,7 @@ def contactme():
         form.name.data = ''
         form.email.data = ''
 
-    return render_template('contactme.html', form=form)
+    return render_template('contact.html', form=form)
 
 
 @app.route("/thanks")
