@@ -45,13 +45,26 @@ i.fa-2x:hover {
   color: #007bb6;
 }
 /*
- * For the Contact Me page:
+ * For the Books and Sites Page:
+ */
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+/*
+ * For the Contact Us page:
  * List of hex codes for html entities:
  *    https://www.w3schools.com/charsets/ref_html_entities_r.asp
  */
 ul.social-list,
 ul.old-school-list {
-   list-style: none;
+  list-style: none;
+}
+li.step-title {
+  font-weight: bold;
+  text-decoration: underline;
 }
 /*
  * These font-awesome-inspired bullets are interesting but
@@ -65,7 +78,4 @@ ul.old-school-list {
  *    padding: .3em;
  * }
  */
-li.step-title {
-   font-weight: bold;
-   text-decoration: underline;
-}
+
