@@ -8,7 +8,7 @@ Reference:
   Chapter 3 of the "Flask Web Development" book (M. Grinberg, 2014)
 """
 
-from config import *
+from groja_config import *
 from flask import Flask, flash
 from flask import redirect, render_template, request, session, url_for
 from flask_bootstrap import Bootstrap
@@ -21,7 +21,7 @@ app = Flask(__name__)
 #
 # Load the configuration settings and Bootstrap the app
 #
-app.config.from_object('config.Config')
+app.config.from_object('groja_config.Config')
 Bootstrap(app)
 
 # =============================================================================
