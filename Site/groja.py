@@ -59,17 +59,17 @@ def yourportrait():
     )
 
 
-@app.route("/contact/<interest>", methods=['GET', 'POST'])
-def contact(interest):
+@app.route("/conversion/<interest>", methods=['GET', 'POST'])
+def conversion(interest):
 
-    """ Display and process a contact page that contains a form """
+    """ Display and process conversion pages that contain a form """
 
     form = NameEmailForm(request.form)
 
     if request.method == 'POST':
         name = form.name.data
         email = form.email.data
-        # print("In contact, name: ", name, "email: ", email)
+        # print("In conversion, name: ", name, "email: ", email)
 
         if form.validate():
             session['name'] = name
@@ -97,11 +97,11 @@ def contact(interest):
         form.email.data = ''
 
     if interest == 'groja':
-        template_name = 'contact_groja.html'
+        template_name = 'conversion_groja.html'
     elif interest == 'seeourminds':
-        template_name = 'contact_seeourminds.html'
+        template_name = 'conversion_seeourminds.html'
     elif interest == 'tomwhartung':
-        template_name = 'contact_tomwhartung.html'
+        template_name = 'conversion_tomwhartung.html'
     else:
         template_name = 'home.html'
 
