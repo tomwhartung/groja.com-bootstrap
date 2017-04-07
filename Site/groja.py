@@ -59,8 +59,8 @@ def yourportrait():
     )
 
 
-@app.route("/contact", methods=['GET', 'POST'])
-def contact():
+@app.route("/contact/<interest>", methods=['GET', 'POST'])
+def contact(interest):
 
     """ Display and process a contact page that contains a form """
 
@@ -89,7 +89,16 @@ def contact():
         form.name.data = ''
         form.email.data = ''
 
-    return render_template('contact.html', form=form)
+    if interest == 'groja':
+        template_name = 'contact_groja.html'
+    elif interest == 'seeourminds':
+        template_name = 'contact_seeourminds.html'
+    elif interest == 'tomwhartung':
+        template_name = 'contact_tomwhartung.html'
+    else:
+        template_name = 'home.html'
+
+    return render_template(template_name, form=form)
 
 
 @app.route("/thanks")
