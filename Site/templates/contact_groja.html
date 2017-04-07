@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Contact{% endblock %}
+{% block title %}Get Your Groja{% endblock %}
 {% block head %}
    {{ super() }}
    <style>
@@ -7,13 +7,12 @@
 {% endblock %}
 
 {% block toprowcontent %}
-  <!-- Main jumbotron for a primary marketing message or call to action -->
   <article class="jumbotron">
     <section id="name-email-form">
       <p>
         For details about how you can get your personalized
          Spiritual Portrait, enter your name and email address, and
-         we will contact you within 24 hours!
+         we will contact you as soon as we can!
       </p>
       <form  action="" method="post" role="form">
         {{ form.hidden_tag() }}
@@ -23,7 +22,7 @@
           <label for="email">{{ form.email.label }}</label>
           {{ form.email( class="form-control", value=form.email.data ) }}
         </div>
-        <button type="submit" class="btn btn-success">Sign Up</button>
+        <button type="submit" class="btn btn-success">Get Your Portrait</button>
       </form>
     </section><!-- #name-email-form -->
   </article><!-- .jumbotron -->
