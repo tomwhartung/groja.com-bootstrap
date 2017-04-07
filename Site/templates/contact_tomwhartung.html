@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Contact{% endblock %}
+{% block title %}Consulting Work{% endblock %}
 {% block head %}
    {{ super() }}
    <style>
@@ -11,13 +11,8 @@
   <article class="jumbotron">
     <section id="name-email-form">
       <p>
-        To join the email list for
-          <a href="http://www.seeourminds.com" title="SeeOurMinds.com home page">
-            SeeOurMinds.com</a>
-          and
-          <a href="http://www.groja.com" title="Groja.com home page">
-            Groja.com</a>,
-          enter your name and email address in the form below.
+        If you'd like me to do some work for you,
+          enter your name and email address in the form below:
       </p>
       <form action="" method="post" role="form">
         {{ form.hidden_tag() }}
@@ -27,7 +22,8 @@
           <label for="email">{{ form.email.label }}</label>
           {{ form.email( class="form-control", value=form.email.data ) }}
         </div>
-        <button type="submit" class="btn btn-success">Sign Up</button>
+        <button type="submit" class="btn btn-success">Contact Tom W. Hartung
+		  </button>
       </form>
     </section><!-- #name-email-form -->
   </article><!-- .jumbotron -->
@@ -35,7 +31,8 @@
     <div class="row">
       <div class="col-md-8">
         <section id="thanks">
-          <h3>Thanks!</h3>
+          <h3>I will contact you as soon as I can!</h3>
+          <h2>Thanks!</h2>
         </section><!-- #thanks -->
       </div><!-- .col-md-8 -->
     </div><!-- .row -->
@@ -47,13 +44,11 @@
       <h3>What to Expect</h3>
       <ul start="0">
         <li>
-          We will send you updates every once in awhile.</li>
+          I will contact you as soon as I can.</li>
         <li>
-          Keep an eye out for the Spiritual Portrait of
-			   one of your favorite characters!</li>
+          We will discuss how I might help you!</li>
       </ul>
       <p>Thanks!</p>
     </div><!-- .sidebox -->
-    {{ super() }}
   </section><!-- #process -->
 {% endblock %}
