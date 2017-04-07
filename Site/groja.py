@@ -74,7 +74,14 @@ def contact(interest):
         if form.validate():
             session['name'] = name
             session['email'] = email
-            update_or_insert_name_email(name, email, portrait=1)
+            if interest == 'groja':
+                update_or_insert_name_email(name, email, portrait=1)
+            elif interest == 'seeourminds':
+                update_or_insert_name_email(name, email, newsletter=1)
+            elif interest == 'tomwhartung':
+                update_or_insert_name_email(name, email, consulting=1)
+            else:
+                update_or_insert_name_email(name, email)
             flash('Thanks, we will be in touch with you soon!')
             return redirect(url_for('thanks'))
         else:
