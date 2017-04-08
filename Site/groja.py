@@ -72,18 +72,24 @@ def conversion(interest):
         # print("In conversion, name: ", name, "email: ", email)
 
         if form.validate():
+            # session variables are used in the thanks page function
             session['name'] = name
             session['email'] = email
+            session['interest'] = interest
             if interest == 'groja':
                 update_or_insert_name_email(name, email, portrait=1)
+                thanks_page_url = url_for('thanks')
             elif interest == 'seeourminds':
                 update_or_insert_name_email(name, email, newsletter=1)
+                thanks_page_url = url_for('thanks')
             elif interest == 'tomwhartung':
                 update_or_insert_name_email(name, email, consulting=1)
+                thanks_page_url = url_for('thanks')
             else:
                 update_or_insert_name_email(name, email)
+                thanks_page_url = url_for('home')
             flash('Thanks, we will be in touch with you soon!')
-            return redirect(url_for('thanks'))
+            return redirect(thanks_page_url)
         else:
             # print("form.errors:", form.errors)
             #
@@ -115,12 +121,25 @@ def thanks():
 
     name = session.get('name')
     email = session.get('email')
+    interest = session.get('interest')
     # print("In thanks, name: ", name, "email: ", email)
+
+    if interest == 'groja':
+        template_name = 'thanks_groja.html'
+        interest_text = 'buying a spiritual portrait'
+    elif interest == 'seeourminds':
+        template_name = 'thanks_seeourminds.html'
+        interest_text = 'joining the seeourminds email list'
+    elif interest == 'tomwhartung':
+        template_name = 'thanks_tomwhartung.html'
+        interest_text = 'getting me to do some consulting work'
+    else:
+        template_name = 'home.html'
     send_interest_email(
             name + ' (' + email + ') ' +
-            'has expressed an interest in buying a spiritual portrait!'
+            'has expressed an interest in ' + interest_text + '!'
     )
-    return render_template('thanks.html', name=name)
+    return render_template(template_name, name=name)
 
 # =============================================================================
 #
