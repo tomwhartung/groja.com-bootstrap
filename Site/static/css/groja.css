@@ -75,6 +75,16 @@ li.step-title {
   font-weight: bold;
   text-decoration: underline;
 }
+
+/*
+ * Keep images etc. from overflowing their containers
+ * Reference:
+ *   https://developers.google.com/web/fundamentals/design-and-ui/responsive/images#use_relative_sizes_for_images
+ */
+img, embed, object, video {
+  max-width: 100%;
+}
+
 /*
  * These font-awesome-inspired bullets are interesting but
  * I decided I hate them.  Keeping the code in comments here
