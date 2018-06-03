@@ -41,6 +41,12 @@ def about():
     return render_template('about.html', aboutSelected='selected')
 
 
+@app.route('/google428ef5aab2bc0870.html')
+def google428ef5aab2bc0870():
+    """ Show the Google Verification page """
+    return render_template('google428ef5aab2bc0870.html')
+
+
 @app.route('/booksandsites')
 def booksandsites():
     """ Show the Books and Sites page """
