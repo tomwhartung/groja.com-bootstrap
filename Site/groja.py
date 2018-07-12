@@ -41,12 +41,6 @@ def about():
     return render_template('about.html', aboutSelected='selected')
 
 
-@app.route('/google428ef5aab2bc0870.html')
-def google428ef5aab2bc0870():
-    """ Show the Google Verification page """
-    return render_template('google428ef5aab2bc0870.html')
-
-
 @app.route('/booksandsites')
 def booksandsites():
     """ Show the Books and Sites page """
@@ -146,6 +140,18 @@ def thanks():
             'has expressed an interest in ' + interest_text + '!'
     )
     return render_template(template_name, name=name)
+
+
+@app.route('/google203aca4a4dd53796.html')
+def google203aca4a4dd53796():
+    """ Show the Google Verification page for my tomwhartung.meetups acct """
+    return render_template('google428ef5aab2bc0870.html')
+
+
+@app.route('/google428ef5aab2bc0870.html')
+def google428ef5aab2bc0870():
+    """ Show the Google Verification page for my tomwhartung@gmail acct """
+    return render_template('google428ef5aab2bc0870.html')
 
 # =============================================================================
 #
