@@ -145,7 +145,7 @@ def thanks():
 @app.route('/google203aca4a4dd53796.html')
 def google203aca4a4dd53796():
     """ Show the Google Verification page for my tomwhartung.meetups acct """
-    return render_template('google428ef5aab2bc0870.html')
+    return render_template('google203aca4a4dd53796.html')
 
 
 @app.route('/google428ef5aab2bc0870.html')
