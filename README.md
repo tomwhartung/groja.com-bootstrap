@@ -1,6 +1,8 @@
-# groja.com
+# groja.com-bootstrap
 
-This repo contains the code for groja.com .
+This **obsolete repo** contains **OLD** code for groja.com .
+
+**Please use the new code which uses Material Design Bootstrap and has updated and new content in the current groja.com repo.**
 
 For the Requirements used to create this, see the README-Requirements.md file in this directory.
 
